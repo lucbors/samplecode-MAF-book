@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="floorPlanPageDef"
+                Package="com.tamcapp.mobilebook.Maps">
+
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="FloorPlanHotspots" id="FloorPlanHotspotsIterator"/>
+    <accessorIterator MasterBinding="FloorPlanHotspotsIterator" Binds="hotspots" RangeSize="-1" DataControl="FloorPlanHotspots"
+                      BeanClass="com.tamcapp.mobilebook.mobile.beans.FloorPlanHotspots" id="hotspotsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="hotspotsIterator" id="hotspots">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.hotspots.Hotspot" Name="hotspots0">
+        <AttrNames>
+          <Item Value="area"/>
+          <Item Value="areanumber"/>
+          <Item Value="description"/>
+          <Item Value="info"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+   
+  </bindings>
+</pageDefinition>

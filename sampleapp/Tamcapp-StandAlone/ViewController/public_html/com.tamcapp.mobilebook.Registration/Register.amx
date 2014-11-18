@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1" styleClass="tampcapp-background">
+    <amx:facet name="header">
+      <amx:outputText value="Register" styleClass="tamcapp-small-text" id="ot1"/>
+    </amx:facet>
+    
+    <amx:facet name="secondary">
+       <amx:commandButton text="Register" id="cb3" styleClass="adfmf-commandButton-highlight"/>
+    </amx:facet>
+    <amx:panelFormLayout  id="pfl1" labelPosition="start" fieldHalign="start" labelWidth="35%" fieldWidth="65%"  >
+      <amx:inputText label="Email Address" id="it1" styleClass="tamcapp-inputText-small"/>
+      <amx:inputText label="First Name" id="it2" styleClass="tamcapp-inputText-small"/>
+      <amx:inputText label="Last Name" id="it3" styleClass="tamcapp-inputText-small"/>
+     
+    </amx:panelFormLayout>
+  </amx:panelPage>
+</amx:view>

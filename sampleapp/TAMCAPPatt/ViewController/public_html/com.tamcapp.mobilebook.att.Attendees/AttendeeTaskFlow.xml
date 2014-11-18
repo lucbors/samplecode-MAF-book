@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="AttendeeTaskFlow">
+    <default-activity>AttendeeList</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name>attendeesBean</managed-bean-name>
+      <managed-bean-class>com.tamcapp.mobilebook.att.mobile.beans.AttendeesBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="AttendeeList">
+      <page>/com.tamcapp.mobilebook.att.Attendees/AttendeeList.amx</page>
+    </view>
+    <view id="AttendeeDetail">
+      <page>/com.tamcapp.mobilebook.att.Attendees/AttendeeDetail.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>AttendeeList</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>details</from-outcome>
+        <to-activity-id>AttendeeDetail</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

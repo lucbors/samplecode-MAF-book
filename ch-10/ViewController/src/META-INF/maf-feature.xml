@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="com.blogspot.lucbors.ch10.publicFeature" name="publicFeature">
+    <adfmf:content id="com.blogspot.lucbors.ch10.publicFeature.1">
+      <adfmf:amx file="com.blogspot.lucbors.ch10.publicFeature/publicPage.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.ch10.securedFeature" name="securedFeature" securityEnabled="true">
+    <adfmf:content id="com.blogspot.lucbors.ch10.securedFeature.1">
+      <adfmf:amx file="com.blogspot.lucbors.ch10.securedFeature/securedPage.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.ch10.localSecuredFeature" name="localSecuredFeature" securityEnabled="true">
+    <adfmf:content id="com.blogspot.lucbors.ch10.localSecuredFeature.1">
+      <adfmf:amx file="com.blogspot.lucbors.ch10.localSecuredFeature/localSecuredPage.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+
+  <adfmf:feature id="com.blogspot.lucbors.ch10.noImagesAllowedFeature" name="noImagesAllowedFeature"
+                 securityEnabled="false">
+    <adfmf:content id="com.blogspot.lucbors.ch10.noImagesAllowedFeature.1">
+      <adfmf:amx file="com.blogspot.lucbors.ch10.noImagesAllowedFeature/noImagesAllowedPage.amx"/>
+    </adfmf:content>
+    <adfmf:deviceFeatureAccess>
+      <adfmf:deviceCamera id="dc1" requestAccess="true" access="true"/>
+      <adfmf:deviceContacts id="dc2"/>
+      <adfmf:deviceEmails id="de1"/>
+      <adfmf:deviceLocation id="dl1"/>
+      <adfmf:deviceFiles id="df1"/>
+      <adfmf:deviceNetwork id="dn1"/>
+      <adfmf:devicePhone id="dp1"/>
+      <adfmf:devicePushNotifications id="dpn1"/>
+      <adfmf:deviceSMS id="dsms1"/>
+    </adfmf:deviceFeatureAccess>
+  </adfmf:feature>
+</adfmf:features>

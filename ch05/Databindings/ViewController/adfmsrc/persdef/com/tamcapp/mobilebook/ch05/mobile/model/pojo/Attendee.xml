@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Attendee"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  Version="12.1.3.11.19">
+  <DesignTime>
+    <Attr Name="_DCName" Value="com.tamcapp.mobilebook.ch05.mobile.DataControls.AttendeesService"/>
+    <Attr Name="_SDName" Value="com.tamcapp.mobilebook.ch05.mobile.model.pojo.Attendee"/>
+  </DesignTime>
+  <PDefAttribute
+    Name="firstName"
+    IsUpdateable="true">
+    <validation:CompareValidationBean
+      Name="firstNameRule0"
+      ResId="${adfBundle['com.tamcapp.mobilebook.ch05.mobile.ViewControllerBundle']['FIRST_NAME_AND_LAST_NAME_CANNO']}"
+      Severity="Warning"
+      OnAttribute="firstName"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="EQUALTO"
+      CompareValue="lastName"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['com.tamcapp.mobilebook.ch05.mobile.ViewControllerBundle']['LABEL_FIRST_NAME']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+</PDefViewObject>

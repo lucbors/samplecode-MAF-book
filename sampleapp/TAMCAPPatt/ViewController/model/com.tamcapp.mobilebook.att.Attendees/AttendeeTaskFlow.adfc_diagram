@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">AttendeeList</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.att.Attendees/AttendeeList.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AttendeeList&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">177.73438</property>
+      <property
+         name="x">178.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">AttendeeDetail</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.att.Attendees/AttendeeDetail.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AttendeeDetail&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">178.73438</property>
+      <property
+         name="x">398.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">details</property>
+      <property
+         name="sdm:polyPoints">R50,219.0,177.73438,357.0,178.66797,L50</property>
+   </ControlFlowCase>
+</SDM>

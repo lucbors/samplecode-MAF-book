@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="firstPageDef" Package="example">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="AttendeeService" id="AttendeeServiceIterator"/>
+    <accessorIterator MasterBinding="AttendeeServiceIterator" Binds="attendees" RangeSize="25"
+                      DataControl="AttendeeService" BeanClass="com.blogspot.lucbors.ch5.mobile.pojo.Attendee"
+                      id="attendeesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="attendeesIterator" id="attendees">
+      <nodeDefinition DefName="com.blogspot.lucbors.ch5.mobile.pojo.Attendee" Name="attendees0">
+        <AttrNames>
+          <Item Value="firstName"/>
+         <Item Value="lastName"/>
+         <Item Value="country"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+   
+  </bindings>
+</pageDefinition>

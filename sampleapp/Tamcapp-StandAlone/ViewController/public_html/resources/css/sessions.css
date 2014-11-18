@@ -1,0 +1,16 @@
+.greenCell{
+ background-image: -webkit-gradient(linear, left bottom, left top, 
+                   color-stop(0, #00ff00), 
+                   color-stop(0.48, #52ff52), 
+                   color-stop(0.49, #63ff63), 
+                   color-stop(1.00, #73ff73)); 
+}
+
+.redCell{
+ background-image: -webkit-gradient(linear, left bottom, left top, 
+                   color-stop(0, #ff0000), 
+                   color-stop(0.48, #ff2222), 
+                   color-stop(0.49, #ff3232), 
+                   color-stop(1.00, #ffb5b5)); 
+}
+

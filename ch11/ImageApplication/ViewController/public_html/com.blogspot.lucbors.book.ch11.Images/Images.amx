@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"/>
+    </amx:facet>
+    <amx:outputText value="#{bindings.Return.inputValue}" id="ot2"/>
+    <!--script type="text/javascript" charset="utf-8" src="../../../www/js/phonegap-1.0.0.js"></script-->
+         <amx:panelFormLayout id="pfl1">
+            <amx:inputNumberSlider id="ins1" value="#{bindings.quality.inputValue}" label="Image Quality (%)" minimum="50"
+                                   maximum="100" stepSize="10"/>
+            <amx:inputText id="it1" label="%" disabled="true" value="#{bindings.quality.inputValue}"/>                                    
+            <amx:selectOneChoice value="#{bindings.source.inputValue}" label="Source" id="soc1">
+                <amx:selectItem label="Camera" value="1"/>
+                <amx:selectItem label="Album" value="2"/>
+            </amx:selectOneChoice>
+            <amx:selectBooleanSwitch value="#{bindings.allowEdit.inputValue}" label="Allow Edit" id="sbs1" offLabel="No"
+                                     onLabel="Yes"/>
+            <amx:selectOneChoice value="#{bindings.encoding.inputValue}" label="Encoding" id="soc2">
+                <amx:selectItem label="JPEG" value="0"/>
+                <amx:selectItem label="PNG" value="1"/>
+            </amx:selectOneChoice>
+            <amx:inputText id="it2" label="Width (px)"  value="#{bindings.targetWidth.inputValue}"/>                                       
+            <amx:inputText id="it3" label="Height (px)" value="#{bindings.targetHeight.inputValue}"/>
+        </amx:panelFormLayout>
+    
+            <amx:commandButton actionListener="#{bindings.getPicture.execute}" text="Picture"
+                               id="cb1a" action="upload"/>
+    
+    
+       
+    <amx:panelFormLayout id="pfl1a">
+      <amx:inputText value="#{bindings.fileType.inputValue}" label="#{bindings.fileType.hints.label}" id="it1a"/>
+      <amx:inputText value="#{bindings.fileName.inputValue}" label="#{bindings.fileName.hints.label}" id="it2a"/>
+      <amx:inputText value="#{bindings.fileOwner.inputValue}" label="#{bindings.fileOwner.hints.label}" id="it3a"/>
+      <amx:inputText value="#{bindings.description.inputValue}" label="#{bindings.description.hints.label}" id="it4a"/>
+    </amx:panelFormLayout>
+    <amx:commandButton actionListener="#{bindings.uploadImage.execute}" text="uploadImage"
+                       disabled="#{!bindings.uploadImage.enabled}" id="cb3"/>
+  </amx:panelPage>
+</amx:view>

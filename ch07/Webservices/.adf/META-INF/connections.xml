@@ -1,0 +1,252 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="CountryRestXmlConnection" className="oracle.adf.model.connection.url.HttpURLConnection" xmlns="">
+      <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="CountryRestXmlConnection">
+            <Contents>
+               <urlconnection name="CountryRestXmlConnection" url="http://api.geonames.org/countryInfo"/>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="SoapXmlCountryDataControl"
+              className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://www.webservicex.net/country.asmx?WSDL"
+                             service="{http://www.webserviceX.NET}country">
+                  <model name="{http://www.webserviceX.NET}country" xmlns="http://oracle.com/ws/model">
+                     <service name="{http://www.webserviceX.NET}country">
+                        <port name="countrySoap" binding="{http://www.webserviceX.NET}countrySoap">
+                           <soap addressUrl="http://www.webservicex.net/country.asmx"
+                                 xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="GetCountries">
+                              <soap soapAction="http://www.webserviceX.NET/GetCountries"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISOCountryCodeByCountyName">
+                              <soap soapAction="http://www.webserviceX.NET/GetISOCountryCodeByCountyName"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCountryCode">
+                              <soap soapAction="http://www.webserviceX.NET/GetCountryByCountryCode"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetGMTbyCountry">
+                              <soap soapAction="http://www.webserviceX.NET/GetGMTbyCountry"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISD">
+                              <soap soapAction="http://www.webserviceX.NET/GetISD"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencies">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencies"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCodeByCurrencyName">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencyCodeByCurrencyName"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCurrencyCode">
+                              <soap soapAction="http://www.webserviceX.NET/GetCountryByCurrencyCode"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyByCountry">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencyByCountry"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCode">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencyCode"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                        </port>
+                        <port name="countryHttpPost" binding="{http://www.webserviceX.NET}countryHttpPost">
+                           <operation name="GetCountries">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISOCountryCodeByCountyName">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCountryCode">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetGMTbyCountry">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISD">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencies">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCodeByCurrencyName">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCurrencyCode">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyByCountry">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCode">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                        </port>
+                        <port name="countrySoap12" binding="{http://www.webserviceX.NET}countrySoap12">
+                           <soap addressUrl="http://www.webservicex.net/country.asmx"
+                                 xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="GetCountries">
+                              <soap soapAction="http://www.webserviceX.NET/GetCountries"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISOCountryCodeByCountyName">
+                              <soap soapAction="http://www.webserviceX.NET/GetISOCountryCodeByCountyName"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCountryCode">
+                              <soap soapAction="http://www.webserviceX.NET/GetCountryByCountryCode"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetGMTbyCountry">
+                              <soap soapAction="http://www.webserviceX.NET/GetGMTbyCountry"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISD">
+                              <soap soapAction="http://www.webserviceX.NET/GetISD"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencies">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencies"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCodeByCurrencyName">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencyCodeByCurrencyName"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCurrencyCode">
+                              <soap soapAction="http://www.webserviceX.NET/GetCountryByCurrencyCode"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyByCountry">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencyByCountry"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCode">
+                              <soap soapAction="http://www.webserviceX.NET/GetCurrencyCode"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                        </port>
+                        <port name="countryHttpGet" binding="{http://www.webserviceX.NET}countryHttpGet">
+                           <operation name="GetCountries">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISOCountryCodeByCountyName">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCountryCode">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetGMTbyCountry">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetISD">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencies">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCodeByCurrencyName">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCountryByCurrencyCode">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyByCountry">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="GetCurrencyCode">
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="CountryRestConnection" className="oracle.adf.model.connection.url.HttpURLConnection" xmlns="">
+      <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="CountryRestConnection">
+            <Contents>
+               <urlconnection name="CountryRestConnection" url="http://api.geonames.org"/>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

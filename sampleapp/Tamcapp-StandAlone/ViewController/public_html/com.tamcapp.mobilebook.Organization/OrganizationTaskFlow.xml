@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="OrganizationTaskFlow">
+    <default-activity>Start</default-activity>
+    <view id="ReportIssues">
+      <page>/com.tamcapp.mobilebook.Organization/ReportIssues.amx</page>
+    </view>
+    <view id="SessionHeadCount">
+      <page>/com.tamcapp.mobilebook.Organization/SessionHeadCount.amx</page>
+    </view>
+    <view id="Start">
+      <page>/com.tamcapp.mobilebook.Organization/Start.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>Start</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>issues</from-outcome>
+        <to-activity-id>ReportIssues</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>headcount</from-outcome>
+        <to-activity-id>SessionHeadCount</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

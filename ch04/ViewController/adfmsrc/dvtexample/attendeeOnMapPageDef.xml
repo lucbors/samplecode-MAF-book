@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="attendeeOnMapPageDef"
+                Package="dvtexample">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="AttendeeService" id="AttendeeServiceIterator"/>
+    <accessorIterator MasterBinding="AttendeeServiceIterator" Binds="attendees" RangeSize="-1"
+                      DataControl="AttendeeService" BeanClass="com.blogspot.lucbors.ch5.mobile.pojo.Attendee"
+                      id="attendeesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="attendeesIterator" id="attendees">
+      <nodeDefinition DefName="com.blogspot.lucbors.ch5.mobile.pojo.Attendee" Name="attendees0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="firstName"/>
+          <Item Value="lastName"/>
+          <Item Value="streetAddress"/>
+          <Item Value="city"/>
+          <Item Value="country"/>
+          <Item Value="postal"/>
+          <Item Value="state"/>
+          <Item Value="email"/>
+          <Item Value="phone"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

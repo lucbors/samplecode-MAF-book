@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Evaluations" styleClass="tamcapp-small-text" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" text="Overview" action="__back"/>
+        </amx:facet>
+        <dvtm:barChart var="row" value="#{bindings.scores.collectionModel}" id="bc1" animationOnDisplay="auto"
+                       animationOnDataChange="auto" animationDuration="2500">
+            <amx:facet name="dataStamp">
+                <dvtm:chartDataItem group="#{row.score}" value="#{row.count}"
+                                    series="#{bindings.scores.hints.count.label}" id="cdi1"/>
+            </amx:facet>
+            <dvtm:legend rendered="false" id="l1"/>
+        </dvtm:barChart>
+        <amx:tableLayout width="100%">
+            <amx:rowLayout>
+                <amx:cellFormat width="33%" halign="center">
+                    <dvtm:dialGauge minValue="0" maxValue="5" background="rectangleDarkCustom" indicator="needleDark"
+                                    value="#{bindings.skills.inputValue}" id="dg1" animationDuration="2500">
+                        <dvtm:gaugeLabelFormat scaling="auto">
+                            <amx:convertNumber id="cn1" type="number" integerOnly="true" minIntegerDigits="1"
+                                               maxIntegerDigits="1" minFractionDigits="0" maxFractionDigits="0"/>
+                        </dvtm:gaugeLabelFormat>
+                    </dvtm:dialGauge>
+                </amx:cellFormat>
+                <amx:cellFormat width="33%" halign="center">
+                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.addedValue.inputValue}" id="dg2"
+                                    background="rectangleDarkCustom" indicator="needleDark" animationDuration="2500"/>
+                </amx:cellFormat>
+                <amx:cellFormat width="33%" halign="center">
+                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.materials.inputValue}" id="dg3"
+                                    background="rectangleDarkCustom" indicator="needleDark" animationDuration="2500"></dvtm:dialGauge>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+    </amx:panelPage>
+</amx:view>

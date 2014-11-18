@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="layout">
+    <default-activity>squares</default-activity>
+    <view id="squares">
+      <page>/squares.amx</page>
+    </view>
+    <view id="swimlanes">
+      <page>/swimlanes.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>squares</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>swim</from-outcome>
+        <to-activity-id>swimlanes</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

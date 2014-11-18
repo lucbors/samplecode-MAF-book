@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">email</property>
+      <property
+         name="page">/email.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>email&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">244.80078</property>
+      <property
+         name="x">287.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">emailPlus</property>
+      <property
+         name="page">/emailPlus.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>emailPlus&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">237.86719</property>
+      <property
+         name="x">543.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">moreContent</property>
+      <property
+         name="sdm:polyPoints">R50,328.0,244.73438,502.0,237.80078,L50</property>
+   </ControlFlowCase>
+</SDM>

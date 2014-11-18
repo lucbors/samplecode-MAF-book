@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.94" id="ImagesPageDef"
+                Package="com.blogspot.lucbors.book.ch11.Images">
+  <parameters/>
+  <executables>
+  
+    <iterator Binds="root" RangeSize="25" DataControl="ImageBean" id="ImageBeanIterator"/>
+ 
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="uploadImage_fileType" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="uploadImage_fileName" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="uploadImage_fileOwner" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="uploadImage_description" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="getPictureSource_Return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getPictureSource.result}"/>
+      <variable Type="java.lang.String" Name="getPictureSource_result" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="getPicture_Return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getPicture.result}"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="uploadImage" RequiresUpdateModel="true" Action="invokeMethod" MethodName="uploadImage"
+                  IsViewObjectMethod="false" DataControl="UploadImage" InstanceName="data.UploadImage.dataProvider">
+      <NamedData NDName="fileType" NDType="java.lang.String" NDValue="${bindings.uploadImage_fileType}"/>
+      <NamedData NDName="fileName" NDType="java.lang.String" NDValue="${bindings.uploadImage_fileName}"/>
+      <NamedData NDName="fileOwner" NDType="java.lang.String" NDValue="${bindings.uploadImage_fileOwner}"/>
+      <NamedData NDName="description" NDType="java.lang.String" NDValue="${bindings.uploadImage_description}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="fileType">
+      <AttrNames>
+        <Item Value="uploadImage_fileType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="fileName">
+      <AttrNames>
+        <Item Value="uploadImage_fileName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="fileOwner">
+      <AttrNames>
+        <Item Value="uploadImage_fileOwner"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="description">
+      <AttrNames>
+        <Item Value="uploadImage_description"/>
+      </AttrNames>
+    </attributeValues>
+  
+  
+  
+    <attributeValues IterBinding="ImageBeanIterator" id="quality">
+      <AttrNames>
+        <Item Value="quality"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImageBeanIterator" id="destination">
+      <AttrNames>
+        <Item Value="destination"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImageBeanIterator" id="source">
+      <AttrNames>
+        <Item Value="source"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImageBeanIterator" id="allowEdit">
+      <AttrNames>
+        <Item Value="allowEdit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImageBeanIterator" id="encoding">
+      <AttrNames>
+        <Item Value="encoding"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImageBeanIterator" id="targetWidth">
+      <AttrNames>
+        <Item Value="targetWidth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ImageBeanIterator" id="targetHeight">
+      <AttrNames>
+        <Item Value="targetHeight"/>
+      </AttrNames>
+    </attributeValues>
+      <methodAction id="getPicture" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getPicture"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider"
+                  ReturnName="data.DeviceFeatures.methodResults.getPicture_DeviceFeatures_dataProvider_getPicture_result">
+      <NamedData NDName="quality" NDValue="#{bindings.quality.inputValue}" NDType="int"/>
+      <NamedData NDName="destinationType" NDValue="#{bindings.destination.inputValue}" NDType="int"/>
+      <NamedData NDName="sourceType" NDValue="#{bindings.source.inputValue}" NDType="int"/>
+      <NamedData NDName="allowEdit" NDValue="#{bindings.allowEdit.inputValue}" NDType="boolean"/>
+      <NamedData NDName="encodingType" NDValue="#{bindings.encoding.inputValue}" NDType="int"/>
+      <NamedData NDName="targetWidth" NDValue="#{bindings.targetWidth.inputValue}" NDType="int"/>
+      <NamedData NDName="targetHeight" NDValue="#{bindings.targetHeight.inputValue}" NDType="int"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="Return">
+      <AttrNames>
+        <Item Value="getPicture_Return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

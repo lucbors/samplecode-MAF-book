@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Registration" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"/>
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1">
+      
+      <amx:inputText value="#{applicationScope.applicationId}" label="#{bindings.appId.hints.label}" id="it1"/>
+      <amx:inputText value="#{applicationScope.deviceToken}" label="#{bindings.devToken.hints.label}" id="it3"/>
+      <amx:inputText value="#{deviceScope.device.os}" label="#{bindings.devType.hints.label}" id="it4"/>
+      
+      <amx:inputText value="#{bindings.email.inputValue}" label="#{bindings.email.hints.label}" id="it5"/>
+      <amx:inputText value="#{bindings.userName.inputValue}" label="#{bindings.userName.hints.label}" id="it2"/>
+    </amx:panelFormLayout>
+    <amx:commandButton actionListener="#{bindings.register.execute}" text="register"
+                       disabled="#{!bindings.register.enabled}" id="cb3"/>
+  </amx:panelPage>
+  
+  
+</amx:view>

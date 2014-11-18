@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.blogspot.lucbors.ch5.mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/example/first.amx" usageId="com_blogspot_lucbors_ch5_mobile_firstPageDef"/>
+    <page path="/dvtexample/attendeesByCountry.amx"
+          usageId="com_blogspot_lucbors_ch5_mobile_attendeesByCountryPageDef"/>
+    <page path="/dvtexample/Attendees.amx" usageId="com_blogspot_lucbors_ch5_mobile_AttendeesPageDef"/>
+    <page path="/dvtexample/attendeeOnMap.amx" usageId="com_blogspot_lucbors_ch5_mobile_attendeeOnMapPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_blogspot_lucbors_ch5_mobile_firstPageDef" path="example.firstPageDef"/>
+    <page id="com_blogspot_lucbors_ch5_mobile_attendeesByCountryPageDef" path="dvtexample.attendeesByCountryPageDef"/>
+    <page id="com_blogspot_lucbors_ch5_mobile_AttendeesPageDef" path="dvtexample.AttendeesPageDef"/>
+    <page id="com_blogspot_lucbors_ch5_mobile_attendeeOnMapPageDef" path="dvtexample.attendeeOnMapPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="AttendeeService" path="com.blogspot.lucbors.ch5.mobile.AttendeeService"/>
+  </dataControlUsages>
+</Application>

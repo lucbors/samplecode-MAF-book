@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="smsPageDef"
+                Package="com.blogspot.lucbors.book.ch11.sms">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="sendSMS_to" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendSMS_body" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="sendSMS" RequiresUpdateModel="true" Action="invokeMethod" MethodName="sendSMS"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider">
+      <NamedData NDName="to" NDType="java.lang.String" NDValue="${bindings.sendSMS_to}"/>
+      <NamedData NDName="body" NDType="java.lang.String" NDValue="${bindings.sendSMS_body}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="to">
+      <AttrNames>
+        <Item Value="sendSMS_to"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="body">
+      <AttrNames>
+        <Item Value="sendSMS_body"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

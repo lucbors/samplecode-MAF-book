@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="TAMCAPPatt" id="com.company.TAMCAPPatt"
+                   appControllerFolder="ApplicationController">
+  <adfmf:deviceFeatureAccess>
+    <adfmf:deviceFiles  id="df1" access="true"/>
+    <adfmf:devicePhone  id="dp1" access="true"/>
+    <adfmf:deviceNetwork  id="dn1" access="true"/>
+    <adfmf:deviceCamera  id="dc1" access="true"/>
+    <adfmf:deviceContacts  id="dc2" access="true"/>
+    <adfmf:deviceEmails  id="de1" access="true"/>
+    <adfmf:deviceSMS  id="dsms1" access="true"/>
+    <adfmf:devicePushNotifications  id="dpn1" access="true"/>
+    <adfmf:deviceLocation  id="dl1" access="true"/>
+  </adfmf:deviceFeatureAccess>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.att.Attendees" loginConnRefId="Authenticate"/>
+  
+  <adfmf:login defaultConnRefId="Authenticate"/>
+</adfmf:application>

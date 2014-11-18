@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1" styleClass="tampcapp-background">
+        <amx:facet name="header">
+            <amx:outputText value="My Schedule" styleClass="tamcapp-small-text" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <!--amx:commandButton id="cb1"/-->
+        </amx:facet>
+        <!--amx:carousel id="c1" value="#{bindings.scheduledSessions.collectionModel}" var="day" displayItems="oneByOne"
+                      controlArea="small">
+            <amx:facet name="nodeStamp">
+                <amx:carouselItem id="ci1" text="#{day.displayDateNoTime}" inlineStyle="background-color:Blue;"
+                                  styleClass="tampcap-carouselItem"-->
+    <amx:panelGroupLayout layout="vertical">
+        <amx:listView var="row" value="#{bindings.scheduledSessions.collectionModel}" id="lv1">
+            <amx:listItem id="li1" showLinkIcon="false">
+                <amx:tableLayout width="100%" id="tl2">
+                    <amx:rowLayout id="rl3">
+                        <amx:cellFormat width="100%" height="12px" id="cf1" inlineStyle="margin:10px 0px 0px 0px;">
+                            <amx:panelGroupLayout layout="horizontal" halign="center">
+                                <amx:outputText id="ot3" value="#{row.sessionStartDateTime}"
+                                                styleClass="tamcapp-smaller-text">
+                                    <amx:convertDateTime id="cdt1" type="time" timeStyle="short"/>
+                                </amx:outputText>
+                                <amx:outputText id="ot3a" value=" - " styleClass="tamcapp-smaller-text"></amx:outputText>
+                                <amx:outputText id="ot5" value="#{row.sessionEndDateTime}"
+                                                styleClass="tamcapp-smaller-text">
+                                    <amx:convertDateTime id="cdt2" type="time" timeStyle="short"/>
+                                </amx:outputText>
+                            </amx:panelGroupLayout>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl2">
+                        <amx:cellFormat width="100%" height="28px" id="cf3" inlineStyle="margin:10px 0px 0px 0px;">
+                            <amx:panelGroupLayout layout="horizontal" halign="center">
+                                <amx:outputText id="ot2" value="#{row.title}" styleClass="tamcapp-small-text"/>
+                            </amx:panelGroupLayout>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:commandLink id="commandButton1" rendered="#{row.showDelete}"
+                                 inlineStyle="position:absolute;margin:5px;right:0;top:0;" shortDesc="Delete Button">
+                    <amx:image source="/images/Minus.png" inlineStyle="height:25px; width:25px;"/>
+                </amx:commandLink>
+                <amx:setPropertyListener from="#{row.rowKey}" to="#{bindings.deleteSessionNo.inputValue}"
+                                         type="swipeRight" id="spl3"/>
+                <amx:actionListener id="al1" type="swipeRight" binding="#{bindings.ShowDeleteButton.execute}"/>
+                <amx:setPropertyListener from="#{row.rowKey}" to="#{bindings.currentSession.inputValue}" id="spl4"/>
+                <amx:actionListener id="al2" binding="#{bindings.ClearDeleteButton.execute}"/>
+            </amx:listItem>
+            <amx:facet name="header">
+                <amx:panelGroupLayout halign="center" valign="middle">
+                    <amx:outputText value="01 July 2014" styleClass="tamcapp-small-text-orange" id="ot4"/>
+                </amx:panelGroupLayout>
+            </amx:facet>
+        </amx:listView>
+        </amx:panelGroupLayout>
+        <!--/amx:carouselItem>
+            </amx:facet>
+        </amx:carousel-->
+    </amx:panelPage>
+</amx:view>

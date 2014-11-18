@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="TAMCAPPses" id="com.company.TAMCAPPses"
+                   appControllerFolder="ApplicationController">
+  <adfmf:deviceFeatureAccess>
+    <adfmf:deviceFiles id="df1"/>
+    <adfmf:devicePhone id="dp1"/>
+    <adfmf:deviceNetwork id="dn1"/>
+    <adfmf:deviceCamera id="dc1"/>
+    <adfmf:deviceContacts id="dc2"/>
+    <adfmf:deviceEmails id="de1"/>
+    <adfmf:deviceSMS id="dsms1"/>
+    <adfmf:devicePushNotifications id="dpn1"/>
+    <adfmf:deviceLocation id="dl1"/>
+  </adfmf:deviceFeatureAccess>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.ses.ConferenceSessions" loginConnRefId="Authenticate"/>
+  
+  <adfmf:login defaultConnRefId="Authenticate"/>
+ 
+  <adfmf:cordovaPlugins>
+ 
+ <adfmf:plugin name="BarcodeScanner" fullyQualifiedName="org.apache.cordova.barcodeScanner"
+                  implementationClass="CDVBarcodeScanner" platform="iOS">
+      <adfmf:iosPluginInfo>
+        <adfmf:linkerFlags>-l BarcodeScanner -lc++ -libiconv -framework CoreVideo -framework AssetsLibrary -framework AVFoundation</adfmf:linkerFlags>
+      </adfmf:iosPluginInfo>
+    </adfmf:plugin>
+ 
+    <adfmf:plugin platform="Android" fullyQualifiedName="BarcodeScanner"
+                  implementationClass="com.phonegap.plugins.barcodescanner.BarcodeScanner" name="BarcodeScanner">
+      <adfmf:androidPluginInfo>
+        <adfmf:resourcePackageName>com.google.zxing.client.android</adfmf:resourcePackageName>
+        <adfmf:androidManifestActivities>&lt;activity android:name="com.google.zxing.client.android.CaptureActivity"
+          android:screenOrientation="landscape"
+          android:clearTaskOnLaunch="true"
+          android:configChanges="orientation|keyboardHidden"
+          android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+          android:windowSoftInputMode="stateAlwaysHidden"
+          android:exported="false"&gt;
+  &lt;intent-filter&gt;
+    &lt;action android:name="com.phonegap.plugins.barcodescanner.SCAN"/&gt;
+    &lt;category android:name="android.intent.category.DEFAULT"/&gt;
+  &lt;/intent-filter&gt;
+&lt;/activity&gt;
+&lt;activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="@string/share_name"&gt;
+  &lt;intent-filter&gt;
+    &lt;action android:name="com.phonegap.plugins.barcodescanner.ENCODE"/&gt;
+    &lt;category android:name="android.intent.category.DEFAULT"/&gt;
+  &lt;/intent-filter&gt;
+&lt;/activity&gt;
+&lt;activity android:name="com.google.zxing.client.android.HelpActivity" android:label="@string/share_name"&gt;
+  &lt;intent-filter&gt;
+     &lt;action android:name="android.intent.action.VIEW"/&gt;
+     &lt;category android:name="android.intent.category.DEFAULT"/&gt;
+  &lt;/intent-filter&gt;
+&lt;/activity&gt;</adfmf:androidManifestActivities>
+      </adfmf:androidPluginInfo>
+    </adfmf:plugin>
+  </adfmf:cordovaPlugins>
+</adfmf:application>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Person">
+  <DesignTime>
+    <Attr Name="_DCName" Value="com.tamcapp.mobilebook.mobile.DataControls.Attendees"/>
+    <Attr Name="_SDName" Value="com.tamcapp.mobilebook.mobile.pojos.Person"/>
+  </DesignTime>
+  <PDefAttribute
+    Name="firstName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['com.tamcapp.mobilebook.mobile.ViewControllerBundle']['com.tamcapp.mobilebook.mobile.pojos.Person.firstName_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="lastName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['com.tamcapp.mobilebook.mobile.ViewControllerBundle']['com.tamcapp.mobilebook.mobile.pojos.Person.lastName_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="country">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['com.tamcapp.mobilebook.mobile.ViewControllerBundle']['com.tamcapp.mobilebook.mobile.pojos.Person.country_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="email">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['com.tamcapp.mobilebook.mobile.ViewControllerBundle']['com.tamcapp.mobilebook.mobile.pojos.Person.email_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="phone">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['com.tamcapp.mobilebook.mobile.ViewControllerBundle']['com.tamcapp.mobilebook.mobile.pojos.Person.phone_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+</PDefViewObject>

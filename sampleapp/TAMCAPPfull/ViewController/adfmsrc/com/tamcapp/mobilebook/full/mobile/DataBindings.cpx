@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.tamcapp.mobilebook.full.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/Springboard.amx" usageId="com_tamcapp_mobilebook_full_mobile_SpringboardPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_tamcapp_mobilebook_full_mobile_SpringboardPageDef"
+          path="com.tamcapp.mobilebook.full.mobile.pageDefs.SpringboardPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ApplicationFeatures" path="com.tamcapp.mobilebook.full.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

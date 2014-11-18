@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="AttendeeStartPageDef"
+                Package="com.tamcapp.mobilebook.Attendees">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Attendees" id="AttendeesIterator"/>
+    <accessorIterator MasterBinding="AttendeesIterator" Binds="attendees" RangeSize="25" DataControl="Attendees"
+                      BeanClass="com.tamcapp.mobilebook.mobile.pojos.Person" id="attendeesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="attendeesIterator" id="attendees">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.Person" Name="attendees0">
+        <AttrNames>
+          <Item Value="lastName"/>
+          <Item Value="firstName"/>
+          <Item Value="photo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

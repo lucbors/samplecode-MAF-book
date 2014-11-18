@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="sessionDetailsPageDef"
+                Package="com.tamcapp.mobilebook.Sessions">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+    
+      <variable Type="java.lang.String" Name="displayFile_headerText" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="displayFile_fileURL" IsQueriable="false"/>
+
+    </variableIterator>
+    <iterator Binds="root" RangeSize="25" DataControl="Sessions" id="SessionsIterator"/>
+    <accessorIterator MasterBinding="SessionsIterator" Binds="sessions" RangeSize="25" DataControl="Sessions"
+                      BeanClass="com.tamcapp.mobilebook.mobile.pojos.Session" id="sessionsIterator"/>
+    <accessorIterator MasterBinding="sessionsIterator" Binds="slot" RangeSize="25" DataControl="Sessions"
+                      BeanClass="com.tamcapp.mobilebook.mobile.pojos.Slot" id="slotIterator"/>
+  
+      <invokeAction Binds="setCurrentRowWithKeyValue" id="SetCurrentSession"/>
+</executables>
+  <bindings>
+      
+
+    <attributeValues IterBinding="sessionsIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="sessionsIterator" id="presenterName">
+      <AttrNames>
+        <Item Value="presenterName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="sessionsIterator" id="title">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="sessionsIterator" id="sessionAbstract">
+      <AttrNames>
+        <Item Value="sessionAbstract"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="sessionsIterator" id="topic">
+      <AttrNames>
+        <Item Value="topic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="sessionsIterator" id="room">
+      <AttrNames>
+        <Item Value="room"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="sessionDate">
+      <AttrNames>
+        <Item Value="sessionDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="startTime">
+      <AttrNames>
+        <Item Value="startTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="endTime">
+      <AttrNames>
+        <Item Value="endTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="displayDate">
+      <AttrNames>
+        <Item Value="displayDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="displayDateNoTime">
+      <AttrNames>
+        <Item Value="displayDateNoTime"/>
+      </AttrNames>
+    </attributeValues>
+    
+    <attributeValues IterBinding="slotIterator" id="displayStartTime">
+      <AttrNames>
+        <Item Value="displayStartTime"/>
+      </AttrNames>
+    </attributeValues>
+    
+    <attributeValues IterBinding="slotIterator" id="displayEndTime">
+      <AttrNames>
+        <Item Value="displayEndTime"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="sessionsIterator" id="setCurrentRowWithKeyValue"
+            InstanceName="com.tamcapp.mobilebook.mobile.model.Sessions.sessions" DataControl="Sessions"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.currentSession}" NDType="java.lang.String"/>
+    </action>
+    
+    
+
+    <methodAction id="displayFile" RequiresUpdateModel="true" Action="invokeMethod" MethodName="displayFile"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider">
+      <NamedData NDName="fileURL" NDType="java.lang.String" NDValue="${bindings.displayFile_fileURL}"/>
+      <NamedData NDName="headerText" NDType="java.lang.String" NDValue="${bindings.displayFile_headerText}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="headerText">
+      <AttrNames>
+        <Item Value="displayFile_headerText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="fileURL">
+      <AttrNames>
+        <Item Value="displayFile_fileURL"/>
+      </AttrNames>
+    </attributeValues>
+
+
+    
+  </bindings>
+</pageDefinition>

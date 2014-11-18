@@ -1,0 +1,11 @@
+<orawsp:wsm-assembly xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy">
+  <sca11:policySet xmlns:sca11="http://docs.oasis-open.org/ns/opencsa/sca/200912" name="policySet"
+                   appliesTo="WS-CONNECTION()"
+                   attachTo="MODULE('ch10WsDc') and REFERENCE('{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmService') and PORT('TamcappAmServiceSoapHttpPort')"
+                   orawsp:highId="1"
+                   xml:id="WS-CONNECTION__MODULE__ch10WsDc___and_REFERENCE____com_blogspot_lucbors_tamcapp_model_srv_common__TamcappAmService___and_PORT__TamcappAmServiceSoapHttpPort__">
+    <wsp:PolicyReference xmlns:wsp="http://www.w3.org/ns/ws-policy"
+                         DigestAlgorithm="http://www.w3.org/ns/ws-policy/Sha1Exc"
+                         URI="oracle/wss_username_token_over_ssl_client_policy" orawsp:status="enabled" orawsp:id="1"/>
+  </sca11:policySet>
+</orawsp:wsm-assembly>

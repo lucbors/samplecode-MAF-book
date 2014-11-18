@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">search</property>
+      <property
+         name="page">/com.blogspot.lucbors.book.ch11.contact/search.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>search&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">195.73438</property>
+      <property
+         name="x">224.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">details</property>
+      <property
+         name="page">/com.blogspot.lucbors.book.ch11.contact/details.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>details&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">195.86719</property>
+      <property
+         name="x">498.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View2"
+      to="View4">
+      <property
+         name="fromOutcome">details</property>
+      <property
+         name="sdm:polyPoints">R50,265.0,195.73438,457.0,195.80078,L50</property>
+   </ControlFlowCase>
+</SDM>

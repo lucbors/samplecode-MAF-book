@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="com.blogspot.lucbors.book.ch11.sms" name="sms">
+    <adfmf:constraints/>
+    <adfmf:content id="com.blogspot.lucbors.book.ch11.sms.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch11.sms/sms.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch11.contact" name="contact">
+    <adfmf:content id="com.blogspot.lucbors.book.ch11.contact.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch11.contact/contacts.xml#contacts"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch11.email" name="email">
+    <adfmf:content id="com.blogspot.lucbors.book.ch11.email.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch11.photo" name="photo">
+    <adfmf:content id="com.blogspot.lucbors.book.ch11.photo.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch11.file" name="file">
+    <adfmf:content id="com.blogspot.lucbors.book.ch11.file.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch11.file/displayFile.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch11.gps" name="gps">
+    <adfmf:content id="com.blogspot.lucbors.book.ch11.gps.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

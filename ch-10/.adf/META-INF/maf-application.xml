@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="ch-10" id="com.company.ch-10" appControllerFolder="ApplicationController">
+  <adfmf:deviceFeatureAccess>
+    <adfmf:deviceFiles allowAccess="true" id="df1" access="true"/>
+    <adfmf:devicePhone allowAccess="true" id="dp1" access="true"/>
+    <adfmf:deviceNetwork allowAccess="true" id="dn1" access="true"/>
+    <adfmf:deviceCamera id="dc1"/>
+    <adfmf:deviceContacts allowAccess="true" id="dc2" access="true"/>
+    <adfmf:deviceEmails allowAccess="true" id="de1" access="true"/>
+    <adfmf:deviceSMS allowAccess="true" id="dsms1" access="true"/>
+    <adfmf:devicePushNotifications allowAccess="true" id="dpn1" access="true"/>
+    <adfmf:deviceLocation allowAccess="true" id="dl1" access="true"/>
+  </adfmf:deviceFeatureAccess>
+  <adfmf:featureReference id="com.blogspot.lucbors.ch10.publicFeature"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.ch10.securedFeature"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.ch10.localSecuredFeature"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.ch10.noImagesAllowedFeature"/>
+  <adfmf:login defaultConnRefId="Ch10LoginServer"/>
+</adfmf:application>

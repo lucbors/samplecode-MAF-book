@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="com.tamcapp.mobilebook.ses.mobile">
+  <AdapterDataControl id="ConferenceSessions" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.tamcapp.mobilebook.ses.mobile.model.ConferenceSessions"
+                      BeanClass="com.tamcapp.mobilebook.ses.mobile.model.ConferenceSessions"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.tamcapp.mobilebook.ses.mobile.pojos.ConferenceSession"/>
+      <TypeInfo FullName="com.tamcapp.mobilebook.ses.mobile.model.ConferenceSessions"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="com.tamcapp.mobilebook.ses.mobile.model.ConferenceSessions"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="Evaluations" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.tamcapp.mobilebook.ses.mobile.model.Evaluations"
+                      BeanClass="com.tamcapp.mobilebook.ses.mobile.model.Evaluations"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.tamcapp.mobilebook.ses.mobile.pojos.ScoreCount"/>
+      <TypeInfo FullName="com.tamcapp.mobilebook.ses.mobile.pojos.Evaluation"/>
+      <TypeInfo FullName="com.tamcapp.mobilebook.ses.mobile.model.Evaluations"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="com.tamcapp.mobilebook.ses.mobile.model.Evaluations"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  
+  <AdapterDataControl id="TamcappWsSesDc" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.tamcapp.mobilebook.ses.mobile.TamcappWsSesDc"
+                      BeanClass="com.tamcapp.mobilebook.ses.mobile.TamcappWsSesDc"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="TamcappWsSesDc" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="com.tamcapp.mobilebook.ses.mobile/TamcappAmService.wsdl" ensureKeyAttribute="true"
+                  UsePersistedStructure="false">
+        <service name="TamcappAmService" namespace="/com/blogspot/lucbors/tamcapp/model/srv/common/"
+                 connection="TamcappWsSesDc">
+          <port name="TamcappAmServiceSoapHttpPort">
+            <operation name="findSessionsById"/>
+            <operation name="getPresentations"/>
+            <operation name="findPresentations"/>
+            <operation name="searchSessions"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

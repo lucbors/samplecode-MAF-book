@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="Tamcapp" id="com.company.Tamcapp" appControllerFolder="ApplicationController">
+  <adfmf:deviceFeatureAccess>
+    <adfmf:deviceFiles access="true" id="df1"/>
+    <adfmf:devicePhone access="true" id="dp1"/>
+    <adfmf:deviceNetwork access="true" id="dn1"/>
+    <adfmf:deviceCamera access="true" id="dc1"/>
+    <adfmf:deviceContacts access="true" id="dc2"/>
+    <adfmf:deviceEmails access="true" id="de1"/>
+    <adfmf:deviceSMS access="true" id="dsms1"/>
+    <adfmf:devicePushNotifications access="true" id="dpn1"/>
+    <adfmf:deviceLocation access="true" id="dl1"/>
+  </adfmf:deviceFeatureAccess>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Attendees" loginConnRefId="Authenticate"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Sessions" loginConnRefId="Authenticate"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Schedule" loginConnRefId="Authenticate"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.SocialMedia" loginConnRefId="Authenticate"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Organization" loginConnRefId="Authenticate"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Maps" loginConnRefId="Authenticate"/>
+  <adfmf:featureReference id="Dashboard"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Registration" showOnNavigationBar="false"
+                          showOnSpringboard="true"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Springboard" showOnSpringboard="false" showOnNavigationBar="false"
+                          loginConnRefId="Authenticate"/>
+  <adfmf:navigation>
+    <adfmf:springboard enabled="true" displayGotoSpringboardControl="true" showSpringboardAtStartup="true">
+      <adfmf:springboardFeatureReference id="com.tamcapp.mobilebook.Springboard"/>
+    </adfmf:springboard>
+    <adfmf:navigationBar displayHideShowNavigationBarControl="true" enabled="true"/>
+  </adfmf:navigation>
+  <adfmf:login defaultConnRefId="Authenticate"/>
+  <adfmf:remoteURLWhiteList>
+    <adfmf:domain id="twitter">*</adfmf:domain>
+  </adfmf:remoteURLWhiteList>
+</adfmf:application>

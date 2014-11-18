@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="TamcappServiceService" targetNamespace="/com/blogspot/lucbors/tamcapp/model/srv/common/" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/" xmlns:tns="/com/blogspot/lucbors/tamcapp/model/srv/common/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="/com/blogspot/lucbors/tamcapp/model/srv/common/types/">
+  <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="ServiceException.wsdl"/>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="/com/blogspot/lucbors/tamcapp/model/srv/common/types/"
+              schemaLocation="TamcappServiceService.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="TamcappServiceService_getAttendees">
+    <wsdl:part name="parameters" element="types:getAttendees"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_getAttendeesResponse">
+    <wsdl:part name="parameters" element="types:getAttendeesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createAttendees">
+    <wsdl:part name="parameters" element="types:createAttendees"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createAttendeesResponse">
+    <wsdl:part name="parameters" element="types:createAttendeesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_updateAttendees">
+    <wsdl:part name="parameters" element="types:updateAttendees"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_updateAttendeesResponse">
+    <wsdl:part name="parameters" element="types:updateAttendeesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_deleteAttendees">
+    <wsdl:part name="parameters" element="types:deleteAttendees"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_deleteAttendeesResponse">
+    <wsdl:part name="parameters" element="types:deleteAttendeesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_mergeAttendees">
+    <wsdl:part name="parameters" element="types:mergeAttendees"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_mergeAttendeesResponse">
+    <wsdl:part name="parameters" element="types:mergeAttendeesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_findAttendees">
+    <wsdl:part name="parameters" element="types:findAttendees"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_findAttendeesResponse">
+    <wsdl:part name="parameters" element="types:findAttendeesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_getAttendences">
+    <wsdl:part name="parameters" element="types:getAttendences"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_getAttendencesResponse">
+    <wsdl:part name="parameters" element="types:getAttendencesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createAttendences">
+    <wsdl:part name="parameters" element="types:createAttendences"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createAttendencesResponse">
+    <wsdl:part name="parameters" element="types:createAttendencesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_updateAttendences">
+    <wsdl:part name="parameters" element="types:updateAttendences"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_updateAttendencesResponse">
+    <wsdl:part name="parameters" element="types:updateAttendencesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_deleteAttendences">
+    <wsdl:part name="parameters" element="types:deleteAttendences"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_deleteAttendencesResponse">
+    <wsdl:part name="parameters" element="types:deleteAttendencesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_mergeAttendences">
+    <wsdl:part name="parameters" element="types:mergeAttendences"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_mergeAttendencesResponse">
+    <wsdl:part name="parameters" element="types:mergeAttendencesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_findAttendences">
+    <wsdl:part name="parameters" element="types:findAttendences"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_findAttendencesResponse">
+    <wsdl:part name="parameters" element="types:findAttendencesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_getGcmSubscribers">
+    <wsdl:part name="parameters" element="types:getGcmSubscribers"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_getGcmSubscribersResponse">
+    <wsdl:part name="parameters" element="types:getGcmSubscribersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createGcmSubscribers">
+    <wsdl:part name="parameters" element="types:createGcmSubscribers"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createGcmSubscribersResponse">
+    <wsdl:part name="parameters" element="types:createGcmSubscribersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_getPresentations">
+    <wsdl:part name="parameters" element="types:getPresentations"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_getPresentationsResponse">
+    <wsdl:part name="parameters" element="types:getPresentationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createPresentations">
+    <wsdl:part name="parameters" element="types:createPresentations"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_createPresentationsResponse">
+    <wsdl:part name="parameters" element="types:createPresentationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_updatePresentations">
+    <wsdl:part name="parameters" element="types:updatePresentations"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_updatePresentationsResponse">
+    <wsdl:part name="parameters" element="types:updatePresentationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_deletePresentations">
+    <wsdl:part name="parameters" element="types:deletePresentations"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_deletePresentationsResponse">
+    <wsdl:part name="parameters" element="types:deletePresentationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_mergePresentations">
+    <wsdl:part name="parameters" element="types:mergePresentations"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_mergePresentationsResponse">
+    <wsdl:part name="parameters" element="types:mergePresentationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_findPresentations">
+    <wsdl:part name="parameters" element="types:findPresentations"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_findPresentationsResponse">
+    <wsdl:part name="parameters" element="types:findPresentationsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_AttendeesCriteria">
+    <wsdl:part name="parameters" element="types:AttendeesCriteria"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_AttendeesCriteriaResponse">
+    <wsdl:part name="parameters" element="types:AttendeesCriteriaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_SessionsCriteria">
+    <wsdl:part name="parameters" element="types:SessionsCriteria"/>
+  </wsdl:message>
+  <wsdl:message name="TamcappServiceService_SessionsCriteriaResponse">
+    <wsdl:part name="parameters" element="types:SessionsCriteriaResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="TamcappServiceService">
+    <wsdl:documentation>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="Attendees" xmlns:ns0="/com/blogspot/lucbors/tamcapp/model/vo/common/" SDOName="ns0:AttendeesSDO" CreateOpName="createAttendees" UpdateOpName="updateAttendees" DeleteOpName="deleteAttendees" MergeOpName="mergeAttendees" GetOpName="getAttendees" FindOpName="findAttendees"/>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="Attendences" xmlns:ns0="/com/blogspot/lucbors/tamcapp/model/vo/common/" SDOName="ns0:AttendencesSDO" CreateOpName="createAttendences" UpdateOpName="updateAttendences" DeleteOpName="deleteAttendences" MergeOpName="mergeAttendences" GetOpName="getAttendences" FindOpName="findAttendences"/>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="GcmSubscribers" xmlns:ns0="/com/blogspot/lucbors/tamcapp/model/vo/common/" SDOName="ns0:GcmSubscribersSDO" CreateOpName="createGcmSubscribers" GetOpName="getGcmSubscribers"/>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="Presentations" xmlns:ns0="/com/blogspot/lucbors/tamcapp/model/vo/common/" SDOName="ns0:PresentationsSDO" CreateOpName="createPresentations" UpdateOpName="updatePresentations" DeleteOpName="deletePresentations" MergeOpName="mergePresentations" GetOpName="getPresentations" FindOpName="findPresentations"/>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="SearchAttendees" xmlns:ns0="/com/blogspot/lucbors/tamcapp/model/vo/common/" SDOName="ns0:SearchAttendeesSDO"/>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="SearchSessions" xmlns:ns0="/com/blogspot/lucbors/tamcapp/model/vo/common/" SDOName="ns0:SearchSessionsSDO"/>
+    </wsdl:documentation>
+    <wsdl:operation name="getAttendees">
+      <wsdl:input message="tns:TamcappServiceService_getAttendees"/>
+      <wsdl:output message="tns:TamcappServiceService_getAttendeesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createAttendees">
+      <wsdl:input message="tns:TamcappServiceService_createAttendees"/>
+      <wsdl:output message="tns:TamcappServiceService_createAttendeesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateAttendees">
+      <wsdl:input message="tns:TamcappServiceService_updateAttendees"/>
+      <wsdl:output message="tns:TamcappServiceService_updateAttendeesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAttendees">
+      <wsdl:input message="tns:TamcappServiceService_deleteAttendees"/>
+      <wsdl:output message="tns:TamcappServiceService_deleteAttendeesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="mergeAttendees">
+      <wsdl:input message="tns:TamcappServiceService_mergeAttendees"/>
+      <wsdl:output message="tns:TamcappServiceService_mergeAttendeesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findAttendees">
+      <wsdl:input message="tns:TamcappServiceService_findAttendees"/>
+      <wsdl:output message="tns:TamcappServiceService_findAttendeesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAttendences">
+      <wsdl:input message="tns:TamcappServiceService_getAttendences"/>
+      <wsdl:output message="tns:TamcappServiceService_getAttendencesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createAttendences">
+      <wsdl:input message="tns:TamcappServiceService_createAttendences"/>
+      <wsdl:output message="tns:TamcappServiceService_createAttendencesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateAttendences">
+      <wsdl:input message="tns:TamcappServiceService_updateAttendences"/>
+      <wsdl:output message="tns:TamcappServiceService_updateAttendencesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAttendences">
+      <wsdl:input message="tns:TamcappServiceService_deleteAttendences"/>
+      <wsdl:output message="tns:TamcappServiceService_deleteAttendencesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="mergeAttendences">
+      <wsdl:input message="tns:TamcappServiceService_mergeAttendences"/>
+      <wsdl:output message="tns:TamcappServiceService_mergeAttendencesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findAttendences">
+      <wsdl:input message="tns:TamcappServiceService_findAttendences"/>
+      <wsdl:output message="tns:TamcappServiceService_findAttendencesResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getGcmSubscribers">
+      <wsdl:input message="tns:TamcappServiceService_getGcmSubscribers"/>
+      <wsdl:output message="tns:TamcappServiceService_getGcmSubscribersResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createGcmSubscribers">
+      <wsdl:input message="tns:TamcappServiceService_createGcmSubscribers"/>
+      <wsdl:output message="tns:TamcappServiceService_createGcmSubscribersResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getPresentations">
+      <wsdl:input message="tns:TamcappServiceService_getPresentations"/>
+      <wsdl:output message="tns:TamcappServiceService_getPresentationsResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createPresentations">
+      <wsdl:input message="tns:TamcappServiceService_createPresentations"/>
+      <wsdl:output message="tns:TamcappServiceService_createPresentationsResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updatePresentations">
+      <wsdl:input message="tns:TamcappServiceService_updatePresentations"/>
+      <wsdl:output message="tns:TamcappServiceService_updatePresentationsResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deletePresentations">
+      <wsdl:input message="tns:TamcappServiceService_deletePresentations"/>
+      <wsdl:output message="tns:TamcappServiceService_deletePresentationsResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="mergePresentations">
+      <wsdl:input message="tns:TamcappServiceService_mergePresentations"/>
+      <wsdl:output message="tns:TamcappServiceService_mergePresentationsResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findPresentations">
+      <wsdl:input message="tns:TamcappServiceService_findPresentations"/>
+      <wsdl:output message="tns:TamcappServiceService_findPresentationsResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="AttendeesCriteria">
+      <wsdl:input message="tns:TamcappServiceService_AttendeesCriteria"/>
+      <wsdl:output message="tns:TamcappServiceService_AttendeesCriteriaResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="SessionsCriteria">
+      <wsdl:input message="tns:TamcappServiceService_SessionsCriteria"/>
+      <wsdl:output message="tns:TamcappServiceService_SessionsCriteriaResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TamcappServiceServiceSoapHttp" type="tns:TamcappServiceService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAttendees">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getAttendees"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createAttendees">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createAttendees"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateAttendees">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updateAttendees"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAttendees">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deleteAttendees"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeAttendees">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergeAttendees"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAttendees">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findAttendees"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAttendences">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getAttendences"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createAttendences">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createAttendences"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateAttendences">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updateAttendences"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAttendences">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deleteAttendences"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergeAttendences">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergeAttendences"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAttendences">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findAttendences"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getGcmSubscribers">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getGcmSubscribers"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createGcmSubscribers">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createGcmSubscribers"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPresentations">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getPresentations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createPresentations">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createPresentations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updatePresentations">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updatePresentations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deletePresentations">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deletePresentations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="mergePresentations">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergePresentations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPresentations">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findPresentations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AttendeesCriteria">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/AttendeesCriteria"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SessionsCriteria">
+      <soap:operation soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/SessionsCriteria"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TamcappServiceService">
+    <wsdl:port name="TamcappServiceServiceSoapHttpPort" binding="tns:TamcappServiceServiceSoapHttp">
+      <soap:address location="http://localhost:7101/Tamcapp-ViewController-context-root/TamcappServiceDCService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

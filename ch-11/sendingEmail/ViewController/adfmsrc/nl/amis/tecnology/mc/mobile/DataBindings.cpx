@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.62.94" id="DataBindings"
+             SeparateXMLFiles="false" Package="nl.amis.tecnology.mc.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/email.amx" usageId="nl_amis_tecnology_mc_mobile_emailPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="nl_amis_tecnology_mc_mobile_emailPageDef" path="nl.amis.tecnology.mc.mobile.pageDefs.emailPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DeviceFeatures" path="nl.amis.tecnology.mc.application.DeviceFeatures"/>
+  </dataControlUsages>
+</Application>

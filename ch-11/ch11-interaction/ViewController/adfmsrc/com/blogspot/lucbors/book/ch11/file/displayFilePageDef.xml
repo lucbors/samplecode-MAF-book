@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="displayFilePageDef"
+                Package="com.blogspot.lucbors.book.ch11.file">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="displayFile_fileURL" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="displayFile_headerText" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="displayFile" RequiresUpdateModel="true" Action="invokeMethod" MethodName="displayFile"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider">
+      <NamedData NDName="fileURL" NDType="java.lang.String" NDValue="${bindings.displayFile_fileURL}"/>
+      <NamedData NDName="headerText" NDType="java.lang.String" NDValue="${bindings.displayFile_headerText}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="fileURL">
+      <AttrNames>
+        <Item Value="displayFile_fileURL"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="headerText">
+      <AttrNames>
+        <Item Value="displayFile_headerText"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="registerPageDef"
+                Package="com.tamcapp.mobilebook.reg.Registration">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="register_appId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="register_devToken" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="register_devType" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="register_email" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="register_userName" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="register" RequiresUpdateModel="true" Action="invokeMethod" MethodName="register"
+                  IsViewObjectMethod="false" DataControl="RegistrationService"
+                  InstanceName="data.RegistrationService.dataProvider">
+      <NamedData NDName="appId" NDValue="#{applicationScope.applicationId}" NDType="java.lang.String"/>
+      <NamedData NDName="devToken" NDValue="#{applicationScope.deviceToken}" NDType="java.lang.String"/>
+      <NamedData NDName="devType" NDValue="#{deviceScope.device.os}" NDType="java.lang.String"/>
+      <NamedData NDName="email" NDValue="${bindings.register_email}" NDType="java.lang.String"/>
+      <NamedData NDName="userName" NDValue="${bindings.register_userName}" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="appId">
+      <AttrNames>
+        <Item Value="register_appId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="devToken">
+      <AttrNames>
+        <Item Value="register_devToken"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="devType">
+      <AttrNames>
+        <Item Value="register_devType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="email">
+      <AttrNames>
+        <Item Value="register_email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="userName">
+      <AttrNames>
+        <Item Value="register_userName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

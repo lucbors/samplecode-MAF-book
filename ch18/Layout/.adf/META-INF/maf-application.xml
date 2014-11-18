@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="Layout" id="com.company.Layout" appControllerFolder="ApplicationController">
+  <adfmf:deviceFeatureAccess>
+    <adfmf:deviceFiles id="df1"/>
+    <adfmf:devicePhone id="dp1"/>
+    <adfmf:deviceNetwork id="dn1"/>
+    <adfmf:deviceCamera id="dc1"/>
+    <adfmf:deviceContacts id="dc2"/>
+    <adfmf:deviceEmails id="de1"/>
+    <adfmf:deviceSMS id="dsms1"/>
+    <adfmf:devicePushNotifications id="dpn1"/>
+    <adfmf:deviceLocation id="dl1"/>
+  </adfmf:deviceFeatureAccess>
+  <adfmf:featureReference id="com.blogspot.lucbors.layout.Layout"/>
+  <adfmf:cordovaPlugins/>
+</adfmf:application>

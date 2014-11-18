@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="searchPageDef"
+                Package="com.blogspot.lucbors.book.ch11.contact">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="findContacts_contactFields" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="findContacts_filter" IsQueriable="false"/>
+      <variable Type="boolean" Name="findContacts_multiple" IsQueriable="false" DefaultValue="true" />
+    </variableIterator>
+    <methodIterator Binds="findContacts.result" DataControl="DeviceFeatures" RangeSize="25"
+                    BeanClass="oracle.adf.model.datacontrols.device.Contact" id="findContactsIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="findContacts" RequiresUpdateModel="true" Action="invokeMethod" MethodName="findContacts"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider"
+                  ReturnName="data.DeviceFeatures.methodResults.findContacts_DeviceFeatures_dataProvider_findContacts_result">
+      <NamedData NDName="contactFields" NDType="java.lang.String" NDValue="${bindings.findContacts_contactFields}"/>
+      <NamedData NDName="filter" NDType="java.lang.String" NDValue="${bindings.findContacts_filter}"/>
+      <NamedData NDName="multiple" NDType="boolean" NDValue="${bindings.findContacts_multiple}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="contactFields">
+      <AttrNames>
+        <Item Value="findContacts_contactFields"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="filter">
+      <AttrNames>
+        <Item Value="findContacts_filter"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="multiple">
+      <AttrNames>
+        <Item Value="findContacts_multiple"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="findContactsIterator" id="Contact">
+      <nodeDefinition DefName="oracle.adf.model.datacontrols.device.Contact" Name="Contact0">
+        <AttrNames>
+          <Item Value="displayName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

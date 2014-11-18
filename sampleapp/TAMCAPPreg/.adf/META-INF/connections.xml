@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="TamcappWsRegDc" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/TamcappEnterpriseModel/TamcappAmService?wsdl" service="{/com/blogspot/lucbors/server/adf/push/model/srv/common/}TamcappAmService">
+                  <model name="{/com/blogspot/lucbors/server/adf/push/model/srv/common/}TamcappAmService" xmlns="http://oracle.com/ws/model">
+                     <service name="{/com/blogspot/lucbors/server/adf/push/model/srv/common/}TamcappAmService">
+                        <port name="TamcappAmServiceSoapHttpPort" binding="{/com/blogspot/lucbors/server/adf/push/model/srv/common/}TamcappAmServiceSoapHttp">
+                           <soap addressUrl="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/TamcappEnterpriseModel/TamcappAmService" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="createTamcappUsers">
+                              <soap soapAction="/com/blogspot/lucbors/server/adf/push/model/srv/common/createTamcappUsers" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                           <operation name="getTamcappUsersByDevice">
+                              <soap soapAction="/com/blogspot/lucbors/server/adf/push/model/srv/common/getTamcappUsersByDevice" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                           <operation name="getTamcappUsers">
+                              <soap soapAction="/com/blogspot/lucbors/server/adf/push/model/srv/common/getTamcappUsers" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

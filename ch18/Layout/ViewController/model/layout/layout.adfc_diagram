@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">squares</property>
+      <property
+         name="page">/squares.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>squares&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">131.73438</property>
+      <property
+         name="x">187.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">swimlanes</property>
+      <property
+         name="page">/swimlanes.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>swimlanes&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">152.86719</property>
+      <property
+         name="x">383.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">swim</property>
+      <property
+         name="sdm:polyPoints">R50,228.0,131.66797,342.0,152.80078,L50</property>
+   </ControlFlowCase>
+</SDM>

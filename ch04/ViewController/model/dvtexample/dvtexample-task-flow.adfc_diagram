@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">attendeesByCountry</property>
+      <property
+         name="page">/dvtexample/attendeesByCountry.amx</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>attendeesByCountry&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">247.20312</property>
+      <property
+         name="x">375.0</property>
+   </View>
+   <View
+      id="View5">
+      <property
+         name="activityId">Attendees</property>
+      <property
+         name="page">/dvtexample/Attendees.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Attendees&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">247.40234</property>
+      <property
+         name="x">161.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View5"
+      to="View3">
+      <property
+         name="fromOutcome">graph</property>
+      <property
+         name="sdm:polyPoints">R46,203.2384,243.83594,334.0,247.13672,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View7">
+      <property
+         name="activityId">attendeeOnMap</property>
+      <property
+         name="page">/dvtexample/attendeeOnMap.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>attendeeOnMap&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">353.66797</property>
+      <property
+         name="x">376.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View5"
+      to="View7">
+      <property
+         name="fromOutcome">map</property>
+      <property
+         name="sdm:polyPoints">R54,202.0,250.83594,335.0,353.60156,L50</property>
+   </ControlFlowCase>
+</SDM>

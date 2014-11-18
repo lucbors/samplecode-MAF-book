@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="SessionTabletPageDef"
+                Package="com.tamcapp.mobilebook.ses.ConferenceSessions.tablet">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="searchConferenceSessions_searchString" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="root" RangeSize="25" DataControl="ConferenceSessions" id="ConferenceSessionsIterator"/>
+    <accessorIterator MasterBinding="ConferenceSessionsIterator" Binds="conferenceSessions" RangeSize="25"
+                      DataControl="ConferenceSessions"
+                      BeanClass="com.tamcapp.mobilebook.ses.mobile.pojos.ConferenceSession"
+                      id="conferenceSessionsIterator"/>
+    <accessorIterator MasterBinding="conferenceSessionsIterator" Binds="slot" RangeSize="25"
+                      DataControl="ConferenceSessions" BeanClass="com.tamcapp.mobilebook.ses.mobile.pojos.Slot"
+                      id="slotIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Evaluations" id="EvaluationsIterator"/>
+   
+   
+    <accessorIterator MasterBinding="EvaluationsIterator" Binds="scores" RangeSize="-1" DataControl="Evaluations"
+                      BeanClass="com.tamcapp.mobilebook.ses.mobile.pojos.ScoreCount" id="scoresIterator"/>
+ 
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator1"/>
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator2"/>
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator3"/>
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator4"/>
+ 
+ 
+  </executables>
+  <bindings>
+    <methodAction id="searchConferenceSessions" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="searchConferenceSessions" IsViewObjectMethod="false" DataControl="ConferenceSessions"
+                  InstanceName="data.ConferenceSessions.dataProvider">
+      <NamedData NDName="searchString" NDType="java.lang.String"
+                 NDValue="${bindings.searchConferenceSessions_searchString}"/>
+    </methodAction>
+    
+     <methodAction id="addToSchedule" RequiresUpdateModel="true" Action="invokeMethod" MethodName="addToSchedule"
+                      IsViewObjectMethod="false" DataControl="ConferenceSessions"
+                      InstanceName="data.ConferenceSessions.dataProvider">
+            <NamedData NDName="id" NDValue="#{pageFlowScope.conferenceSessionBean.currentConferenceSession}"
+                       NDType="int"/>
+        </methodAction>
+        
+    <attributeValues IterBinding="variables" id="searchString">
+      <AttrNames>
+        <Item Value="searchConferenceSessions_searchString"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="conferenceSessionsIterator" id="conferenceSessions">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.ses.mobile.pojos.ConferenceSession" Name="conferenceSessions0">
+        <AttrNames>
+                    <Item Value="id"/>
+                    <Item Value="title"/>
+                    <Item Value="presenterName"/>
+                    <Item Value="topic"/>
+                </AttrNames>
+                <Accessors>
+                    <Item Value="slot"/>
+                </Accessors>
+            </nodeDefinition>
+            <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.Slot" Name="sessions1">
+                <AttrNames>
+                    <Item Value="sessionDate"/>
+                    <Item Value="displayDate"/>
+                    <Item Value="displayDateNoTime"/>
+                    <Item Value="startTime"/>
+                    <Item Value="endTime"/>
+                </AttrNames>
+            </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="conferenceSessionsIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conferenceSessionsIterator" id="presenterName">
+      <AttrNames>
+        <Item Value="presenterName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conferenceSessionsIterator" id="title">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conferenceSessionsIterator" id="sessionAbstract">
+      <AttrNames>
+        <Item Value="sessionAbstract"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conferenceSessionsIterator" id="topic">
+      <AttrNames>
+        <Item Value="topic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="conferenceSessionsIterator" id="room">
+      <AttrNames>
+        <Item Value="room"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="sessionDate">
+      <AttrNames>
+        <Item Value="sessionDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="startTime">
+      <AttrNames>
+        <Item Value="startTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="endTime">
+      <AttrNames>
+        <Item Value="endTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="displayDate">
+      <AttrNames>
+        <Item Value="displayDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="displayDateNoTime">
+      <AttrNames>
+        <Item Value="displayDateNoTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="displayStartTime">
+      <AttrNames>
+        <Item Value="displayStartTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="slotIterator" id="displayEndTime">
+      <AttrNames>
+        <Item Value="displayEndTime"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="conferenceSessionsIterator" id="First"
+            InstanceName="com.tamcapp.mobilebook.ses.mobile.model.ConferenceSessions.conferenceSessions"
+            DataControl="ConferenceSessions" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="conferenceSessionsIterator" id="setCurrentRowWithKeyValue"
+            InstanceName="com.tamcapp.mobilebook.ses.mobile.model.ConferenceSessions.conferenceSessions"
+            DataControl="ConferenceSessions" RequiresUpdateModel="false" Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.conferenceSessionBean.currentConferenceSession}" NDType="java.lang.String"/>
+    </action>
+    <tree IterBinding="scoresIterator" id="scores">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.ses.mobile.pojos.ScoreCount" Name="scores0">
+        <AttrNames>
+          <Item Value="count"/>
+          <Item Value="score"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    
+       <attributeValues IterBinding="EvaluationsIterator1" id="skills">
+      <AttrNames>
+        <Item Value="skills"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EvaluationsIterator2" id="addedValue">
+      <AttrNames>
+        <Item Value="addedValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EvaluationsIterator3" id="materials">
+      <AttrNames>
+        <Item Value="materials"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EvaluationsIterator4" id="skills1">
+      <AttrNames>
+        <Item Value="skills"/>
+      </AttrNames>
+    </attributeValues>
+
+  </bindings>
+</pageDefinition>

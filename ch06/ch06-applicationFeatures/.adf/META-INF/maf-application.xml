@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="ch06_applicationFeatures" id="com.company.ch06_applicationFeatures"
+                   appControllerFolder="ApplicationController">
+  <adfmf:deviceFeatureAccess>
+   
+  </adfmf:deviceFeatureAccess>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature1"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature2"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature3"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature4"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature5"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature6"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature7"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature8"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.feature9"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch06.customSpringboard" showOnNavigationBar="false"
+                          showOnSpringboard="false"/>
+  <adfmf:navigation>
+    <adfmf:springboard enabled="true" displayGotoSpringboardControl="true">
+      <adfmf:springboardFeatureReference id="com.blogspot.lucbors.book.ch06.customSpringboard"/>
+    </adfmf:springboard>
+    <adfmf:navigationBar enabled="true" displayHideShowNavigationBarControl="true"/>
+  </adfmf:navigation>
+</adfmf:application>

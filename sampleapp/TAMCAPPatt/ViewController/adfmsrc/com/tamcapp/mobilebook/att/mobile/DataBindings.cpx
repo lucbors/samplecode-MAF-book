@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.tamcapp.mobilebook.att.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/com.tamcapp.mobilebook.att.Attendees/AttendeeDetail.amx"
+          usageId="com_tamcapp_mobilebook_att_mobile_AttendeeDetailPageDef"/>
+    <page path="/com.tamcapp.mobilebook.att.Attendees/AttendeeList.amx"
+          usageId="com_tamcapp_mobilebook_att_mobile_AttendeeListPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_tamcapp_mobilebook_att_mobile_AttendeeDetailPageDef"
+          path="com.tamcapp.mobilebook.att.Attendees.AttendeeDetailPageDef"/>
+    <page id="com_tamcapp_mobilebook_att_mobile_AttendeeListPageDef"
+          path="com.tamcapp.mobilebook.att.Attendees.AttendeeListPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="AttendeesDetail" path="com.tamcapp.mobilebook.att.mobile.AttendeesDetail"/>
+    <dc id="Attendees" path="com.tamcapp.mobilebook.att.mobile.Attendees"/>
+    <dc id="TamcappWsAttDc" path="com.tamcapp.mobilebook.att.mobile.TamcappWsAttDc"/>
+    <dc id="ImageWsDc" path="com.tamcapp.mobilebook.att.mobile.ImageWsDc"/>
+
+  </dataControlUsages>
+</Application>

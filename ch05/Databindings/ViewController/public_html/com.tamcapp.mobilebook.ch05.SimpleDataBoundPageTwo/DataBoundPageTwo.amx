@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"/>
+    </amx:facet>
+    <amx:commandButton actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                       id="cb3"/>
+    <amx:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                       disabled="#{!bindings.Previous.enabled}" id="cb4"/>
+    <amx:panelFormLayout id="pfl1">
+      <amx:inputText value="#{bindings.id.inputValue}" label="#{bindings.id.hints.label}" id="it6"/>
+      <amx:inputText value="#{bindings.firstName.inputValue}" label="#{bindings.firstName.hints.label}" id="it1"/>
+      <amx:inputText value="#{bindings.lastName.inputValue}" label="#{bindings.lastName.hints.label}" id="it5"/>
+      <amx:inputText value="#{bindings.country.inputValue}" label="#{bindings.country.hints.label}" id="it7"/>
+      <amx:inputText value="#{bindings.email.inputValue}" label="#{bindings.email.hints.label}" id="it4"/>
+      <amx:inputText value="#{bindings.phone.inputValue}" label="#{bindings.phone.hints.label}" id="it2"/>
+      <amx:inputText value="#{bindings.photo.inputValue}" label="#{bindings.photo.hints.label}" id="it3"/>
+    </amx:panelFormLayout>
+  </amx:panelPage>
+</amx:view>

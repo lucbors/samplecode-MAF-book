@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:sdoJava="commonj.sdo/java" sdoJava:package="com.blogspot.lucbors.tamcapp.model.vo.common" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml" xmlns="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="BC4JService.xsd"/>
+  <xsd:import namespace="commonj.sdo/java" schemaLocation="sdoJava.xsd"/>
+  <xsd:import namespace="commonj.sdo/xml" schemaLocation="sdoXML.xsd"/>
+  <xsd:include schemaLocation="AttendencesSDO.xsd"/>
+  <xsd:complexType name="PresentationsSDO">
+    <xsd:annotation>
+      <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+          <attribute>Id</attribute>
+        </key>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+      <xsd:element minOccurs="0" name="PresenterId" nillable="true" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="Title" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="AbstractId" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Summary" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="TopicId" nillable="true" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="RoomId" nillable="true" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="SlotId" nillable="true" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="Preso" nillable="true" type="ns0:base64Binary-DataHandler"/>
+      <xsd:element minOccurs="0" name="IsAccepted" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="IsConducted" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="IsCancelled" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="IsEvalClosed" nillable="true" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Attendences" type="AttendencesSDO"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="presentationsSDO" type="PresentationsSDO"/>
+</xsd:schema>

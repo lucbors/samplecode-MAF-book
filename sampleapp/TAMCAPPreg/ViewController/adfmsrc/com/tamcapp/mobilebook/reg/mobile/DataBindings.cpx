@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.tamcapp.mobilebook.reg.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/com.tamcapp.mobilebook.reg.Registration/register.amx"
+          usageId="com_tamcapp_mobilebook_reg_mobile_registerPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_tamcapp_mobilebook_reg_mobile_registerPageDef"
+          path="com.tamcapp.mobilebook.reg.Registration.registerPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="RegistrationService" path="com.tamcapp.mobilebook.reg.mobile.RegistrationService"/>
+    <dc id="TamcappWsRegDc" path="com.tamcapp.mobilebook.reg.mobile.TamcappWsRegDc"/>
+  </dataControlUsages>
+</Application>

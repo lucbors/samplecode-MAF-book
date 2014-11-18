@@ -1,0 +1,278 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">first</property>
+      <property
+         name="page">/example/first.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>first&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">161.26953</property>
+      <property
+         name="x">162.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">second</property>
+      <property
+         name="page">/example/second.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>second&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">159.73438</property>
+      <property
+         name="x">414.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">goToSecond</property>
+      <property
+         name="sdm:polyPoints">R50,204.22308,161.20312,371.77692,159.66797,L50</property>
+   </ControlFlowCase>
+   <note
+      id="note5">
+      <property
+         name="sdm:nodeHeight">76.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" color="#000000" size="3">View Activity (AMX page)</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">162.0</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">21.0</property>
+   </note>
+   <note
+      id="note6">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" color="#000000" size="3">View Activity (AMX page)</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">159.0</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">623.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment7"
+      from="View3"
+      to="note6">
+      <property
+         name="sdm:polyPoints">R50,456.22308,159.66797,561.2769,159.0,L50</property>
+   </attachment>
+   <attachment
+      islink="true"
+      id="attachment8"
+      from="View2"
+      to="note5">
+      <property
+         name="sdm:polyPoints">L50,119.776924,161.20312,82.723076,162.0,R50</property>
+   </attachment>
+   <note
+      id="note9">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" color="#000000" size="3">Control Flow Case</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">311.0</property>
+      <property
+         name="sdm:nodeWidth">126.0</property>
+      <property
+         name="x">442.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment10"
+      from="note9"
+      to="ControlFlowCase4">
+      <property
+         name="sdm:polyPoints">L50,367.27692,311.0,288.89407,172.15044,S288.8941:160.42735</property>
+   </attachment>
+   <View
+      id="View11">
+      <property
+         name="activityId">third</property>
+      <property
+         name="page">/example/third.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>third&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">317.60156</property>
+      <property
+         name="x">162.0</property>
+   </View>
+   <note
+      id="note12">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" color="#000000" size="3">View Activity (AMX page)</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">317.0</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">24.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment13"
+      from="note12"
+      to="View11">
+      <property
+         name="sdm:polyPoints">R50,85.72308,317.0,119.776924,317.53516,L50</property>
+   </attachment>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="View2"
+      to="View11">
+      <property
+         name="fromOutcome">goToThird</property>
+      <property
+         name="sdm:polyPoints">B50,162.0,215.20312,162.0,263.53516,T50</property>
+   </ControlFlowCase>
+   <attachment
+      islink="true"
+      id="attachment15"
+      from="note9"
+      to="ControlFlowCase14">
+      <property
+         name="sdm:polyPoints">L50,367.27692,311.0,173.72308,237.11987,S162.0:237.11989</property>
+   </attachment>
+   <note
+      id="note19">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" color="#000000" size="3">Wildcard Control Flow Rule</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">456.0</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">31.0</property>
+   </note>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule17">
+      <property
+         name="activityId">*</property>
+      <property
+         name="srcid">__4</property>
+      <property
+         name="y">457.30078</property>
+      <property
+         name="x">167.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="WildcardControlFlowRule17"
+      to="View19">
+      <property
+         name="fromOutcome">goToFourth</property>
+      <property
+         name="tosrcid">__5</property>
+      <property
+         name="fromsrcid">__4</property>
+      <property
+         name="sdm:polyPoints">R50,204.22308,457.73438,324.7769,456.26953,L50</property>
+   </ControlFlowCase>
+   <attachment
+      islink="true"
+      id="attachment18"
+      from="note19"
+      to="WildcardControlFlowRule17">
+      <property
+         name="sdm:polyPoints">R50,92.72308,456.0,129.77692,457.73438,L50</property>
+   </attachment>
+   <View
+      id="View19">
+      <property
+         name="activityId">fourth</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>fourth&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">456.33594</property>
+      <property
+         name="x">367.0</property>
+   </View>
+</SDM>

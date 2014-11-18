@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="Tamcapp" id="com.company.Tamcapp" appControllerFolder="ApplicationController">
+    <adfmf:deviceFeatureAccess>
+        <adfmf:deviceFiles allowAccess="true" id="df1"/>
+        <adfmf:devicePhone allowAccess="true" id="dp1"/>
+        <adfmf:deviceNetwork allowAccess="true" id="dn1"/>
+        <adfmf:deviceCamera allowAccess="true" id="dc1"/>
+        <adfmf:deviceContacts allowAccess="true" id="dc2"/>
+        <adfmf:deviceEmails allowAccess="true" id="de1"/>
+        <adfmf:deviceSMS allowAccess="true" id="dsms1"/>
+        <adfmf:devicePushNotifications allowAccess="true" id="dpn1"/>
+        <adfmf:deviceLocation allowAccess="true" id="dl1"/>
+    </adfmf:deviceFeatureAccess>
+    <adfmf:featureReference id="com.tamcapp.mobilebook.Attendees"/>
+    <adfmf:featureReference id="com.tamcapp.mobilebook.Sessions"/>
+    <adfmf:featureReference id="com.tamcapp.mobilebook.Schedule"/>
+    <adfmf:featureReference id="com.tamcapp.mobilebook.SocialMedia"/>
+    <adfmf:featureReference id="com.tamcapp.mobilebook.Organization"/>
+    <adfmf:featureReference id="com.tamcapp.mobilebook.Maps"/>
+    <!--adfmf:featureReference id="Dashboard"/>
+  <adfmf:featureReference id="com.tamcapp.mobilebook.Registration" showOnNavigationBar="false"
+                          showOnSpringboard="true"/-->
+    <adfmf:featureReference id="com.tamcapp.mobilebook.Springboard" showOnSpringboard="false"
+                            showOnNavigationBar="false"/>
+    <adfmf:navigation>
+        <adfmf:springboard enabled="true" displayGotoSpringboardControl="true" showSpringboardAtStartup="true">
+            <adfmf:springboardFeatureReference id="com.tamcapp.mobilebook.Springboard"/>
+        </adfmf:springboard>
+        <adfmf:navigationBar displayHideShowNavigationBarControl="true" enabled="true"/>
+    </adfmf:navigation>
+    <adfmf:remoteURLWhiteList/>
+</adfmf:application>

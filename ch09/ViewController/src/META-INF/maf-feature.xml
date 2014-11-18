@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="com.blogspot.lucbors.ch09.debugFeature" name="debugFeature">
+    <adfmf:content id="com.blogspot.lucbors.ch09.debugFeature.1">
+      <adfmf:amx file="com.blogspot.lucbors.ch09.debugFeature/ch09-task-flow.xml#ch09-task-flow">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="resources/js/ch09debugDemo.js" id="i1"/>
+        </adfmf:includes>
+      </adfmf:amx>
+    </adfmf:content>
+    <adfmf:deviceFeatureAccess>
+      <adfmf:deviceNetwork access="true" id="dn1"/>
+    </adfmf:deviceFeatureAccess>
+  </adfmf:feature>
+</adfmf:features>

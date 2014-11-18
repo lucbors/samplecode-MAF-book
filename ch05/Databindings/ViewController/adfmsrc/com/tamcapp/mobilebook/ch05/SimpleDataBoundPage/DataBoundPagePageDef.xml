@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="DataBoundPagePageDef"
+                Package="com.tamcapp.mobilebook.ch05.SimpleDataBoundPage">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="AttendeesService" id="AttendeesServiceIterator"
+              ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="AttendeesServiceIterator" Binds="attendees" RangeSize="25"
+                      DataControl="AttendeesService" BeanClass="com.tamcapp.mobilebook.ch05.mobile.model.pojo.Attendee"
+                      id="attendeesIterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="attendeesIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesIterator" id="firstName">
+      <AttrNames>
+        <Item Value="firstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesIterator" id="lastName">
+      <AttrNames>
+        <Item Value="lastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesIterator" id="country">
+      <AttrNames>
+        <Item Value="country"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesIterator" id="phone">
+      <AttrNames>
+        <Item Value="phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesIterator" id="photo">
+      <AttrNames>
+        <Item Value="photo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="attendeesIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="attendeesIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+  </bindings>
+</pageDefinition>

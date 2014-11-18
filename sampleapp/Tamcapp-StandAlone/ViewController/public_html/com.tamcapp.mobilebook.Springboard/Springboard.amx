@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+<amx:panelPage id="pp1" styleClass="tampcapp-background"  >
+        <amx:facet name="header">
+            <amx:tableLayout id="tl0" width="100%" shortDesc="table" >
+                <amx:rowLayout id="rl0"  >
+                    <amx:cellFormat id="cf0" height="44px" width="44px" shortDesc="cell">
+                        <amx:image id="i0" source="/images/organization.png" shortDesc="TamCapp Logo"
+                                   inlineStyle="margin-top:2px;height:40px;width:40px"/>
+                    </amx:cellFormat>
+                    <amx:cellFormat id="cf00" shortDesc="cell">
+                        <amx:outputText value="TamCapp" id="ot1" styleClass="hr-springboard-header"/>
+                    </amx:cellFormat>
+                </amx:rowLayout>
+            </amx:tableLayout>
+        </amx:facet>
+        <amx:tableLayout id="tl1" inlineStyle="width:100%;">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf1" height="10" inlineStyle="width:100%;"/>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl4">
+                <amx:cellFormat id="cf4" inlineStyle="width:100%;">
+                    <amx:panelGroupLayout id="pgl1" layout="wrap" halign="center">
+                    
+                
+                        <amx:iterator var="row" value="#{bindings.features.collectionModel}" id="i1">
+                            <amx:panelGroupLayout id="plam2" inlineStyle="width:33%;display:inline-block;"
+                                                  halign="center" valign="middle">
+                                <amx:tableLayout id="tl2">
+                                    <amx:rowLayout id="rl2">
+                                        <amx:cellFormat id="cf2" halign="center" valign="middle">
+                                            <amx:commandLink actionListener="#{bindings.gotoFeature.execute}" id="cl3">
+                                                <amx:image id="i2" source="#{row.image}"
+                                                           inlineStyle="width:44px;height:44px"/>
+                                                <amx:setPropertyListener from="#{row.id}"
+                                                                         to="#{pageFlowScope.FeatureId}" type="action"/>
+                                            </amx:commandLink>
+                                        </amx:cellFormat>
+                                    </amx:rowLayout>
+                                    <amx:rowLayout id="rl3">
+                                        <amx:cellFormat id="cf3" halign="center" valign="middle">
+                                            <amx:commandLink id="cl2" actionListener="#{bindings.gotoFeature.execute}">
+                                                <amx:outputText value="#{row.name}" id="ot2"
+                                                                />
+                                                <amx:setPropertyListener from="#{row.id}"
+                                                                         to="#{pageFlowScope.FeatureId}" type="action"/>
+                                            </amx:commandLink>
+                                        </amx:cellFormat>
+                                    </amx:rowLayout>
+                                </amx:tableLayout>
+                                <amx:spacer id="s2" height="25"/>
+                            </amx:panelGroupLayout>
+                        </amx:iterator>
+                  
+                    </amx:panelGroupLayout>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+         <amx:panelGroupLayout id="pgl2" inlineStyle="width:100%;position:absolute;bottom:10px" halign="center">
+            <amx:commandButton text="Logoff" id="cb1" styleClass="adfmf-commandButton-alert" shortDesc="Logoff Button">
+                <amx:showPopupBehavior id="spb1" popupId="logoff" align="overlapBottom" alignId="pp1"/>
+            </amx:commandButton>
+        </amx:panelGroupLayout>
+        
+        
+    </amx:panelPage>
+     <amx:popup id="logoff" animation="slideUp" shortDesc="Logoff Popup">
+        <amx:tableLayout id="tl4" width="94px" shortDesc="Logoff table">
+            <amx:rowLayout id="rl8">
+                <amx:cellFormat id="cf14" width="100%" shortDesc="cell" halign="center">
+                    <amx:commandButton id="del" text="Logoff" styleClass="adfmf-commandButton-alert"
+                                       inlineStyle="width:60px" actionListener="#{pageFlowScope.springboardBean.logoff}"
+                                       shortDesc="Logoff">
+                        <amx:closePopupBehavior popupId="logoff" id="cp2"/>
+                    </amx:commandButton>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl9">
+                <amx:cellFormat id="cf15" width="100%" shortDesc="cell" halign="center">
+                    <amx:commandButton id="cancel" text="Cancel" styleClass="adfmf-commandButton-highlight"
+                                       inlineStyle="width:60px" shortDesc="Cancel Button">
+                        <amx:closePopupBehavior popupId="logoff" id="cp3"/>
+                    </amx:commandButton>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+    </amx:popup>
+    </amx:view>

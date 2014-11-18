@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:sdoJava="commonj.sdo/java" sdoJava:package="com.blogspot.lucbors.tamcapp.model.vo.common" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml" xmlns="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>Search Sessions</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="BC4JService.xsd"/>
+  <xsd:import namespace="commonj.sdo/java" schemaLocation="sdoJava.xsd"/>
+  <xsd:import namespace="commonj.sdo/xml" schemaLocation="sdoXML.xsd"/>
+  <xsd:complexType name="SearchSessionsSDO">
+    <xsd:annotation>
+      <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+      <xsd:element minOccurs="0" name="Presentername" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Sessionabstract" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Title" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Topic" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Room" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SessionDate" nillable="true" type="ns0:dateTime-Timestamp"/>
+      <xsd:element minOccurs="0" name="StartTime" nillable="true" type="ns0:dateTime-Timestamp"/>
+      <xsd:element minOccurs="0" name="EndTime" nillable="true" type="ns0:dateTime-Timestamp"/>
+      <xsd:element minOccurs="0" name="TopicId" nillable="true" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="PresenterId" nillable="true" type="xsd:decimal"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="searchSessionsSDO" type="SearchSessionsSDO"/>
+</xsd:schema>

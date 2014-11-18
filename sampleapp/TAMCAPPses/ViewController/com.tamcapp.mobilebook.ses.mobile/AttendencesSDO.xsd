@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:sdoJava="commonj.sdo/java" sdoJava:package="com.blogspot.lucbors.tamcapp.model.vo.common" xmlns:sdoXML="commonj.sdo/xml" xmlns="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="commonj.sdo/java" schemaLocation="sdoJava.xsd"/>
+  <xsd:import namespace="commonj.sdo/xml" schemaLocation="sdoXML.xsd"/>
+  <xsd:complexType name="AttendencesSDO">
+    <xsd:annotation>
+      <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+          <attribute>Id</attribute>
+        </key>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+      <xsd:element minOccurs="0" name="AttendeeId" nillable="true" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="PresentationId" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="Rating" nillable="true" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="attendencesSDO" type="AttendencesSDO"/>
+</xsd:schema>

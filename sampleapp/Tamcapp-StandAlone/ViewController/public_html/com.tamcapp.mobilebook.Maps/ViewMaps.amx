@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1" styleClass="tampcapp-background">
+    <amx:facet name="header">
+      <amx:outputText value="Select map" styleClass="tamcapp-small-text" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"/>
+    </amx:facet>
+    <amx:listView var="row" id="lv1">
+      <amx:listItem id="li1" action="floorplan">
+        <amx:outputText value="Floor Plan" id="ot2"/>
+      </amx:listItem>
+      <amx:listItem id="li2" action="info">
+        <amx:outputText value="Points of Interest" id="ot3"/>
+      </amx:listItem>   
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>

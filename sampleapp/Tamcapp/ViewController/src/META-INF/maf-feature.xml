@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="com.tamcapp.mobilebook.Attendees" name="Attendees" icon="images/Myspace.png"
+                 image="images/Myspace.png" >
+    <adfmf:constraints/>
+    <adfmf:content id="com.tamcapp.mobilebook.Attendees.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.tamcapp.mobilebook.Sessions" name="Sessions" image="images/Black-Board.png"
+                 icon="images/Black-Board.png"   >
+    <adfmf:content id="com.tamcapp.mobilebook.Sessions.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.tamcapp.mobilebook.Schedule" name="Schedule" image="images/Calendar.png"
+                 icon="images/Calendar.png" >
+    <adfmf:content id="com.tamcapp.mobilebook.Schedule.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+  
+  <adfmf:feature id="com.tamcapp.mobilebook.Organization" name="Organization" image="images/organization.png"
+                 icon="images/organization.png" >
+    <adfmf:content id="com.tamcapp.mobilebook.Organization.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+
+  <adfmf:feature id="com.tamcapp.mobilebook.Maps" name="Maps" image="images/Map-and-Location.png"
+                 icon="images/Map-and-Location.png">
+    <adfmf:content id="com.tamcapp.mobilebook.Maps.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature> 
+  <adfmf:feature id="com.tamcapp.mobilebook.SocialMedia" name="SocialMedia" image="images/Twitter-Bird.png"
+                 icon="images/Twitter-Bird.png" >
+    <adfmf:content id="com.tamcapp.mobilebook.SocialMedia.1">
+      <adfmf:localHTML/>
+    </adfmf:content>
+  </adfmf:feature>
+    <adfmf:feature id="com.tamcapp.mobilebook.OrganizationRemote" name="OrganizationRemote" image="images/organization.png"
+                 icon="images/organization.png" >
+    <adfmf:content id="com.tamcapp.mobilebook.OrganizationRemote.1">
+      <adfmf:remoteURL connection=""/>
+    </adfmf:content>
+  </adfmf:feature>
+
+ <adfmf:feature id="com.tamcapp.mobilebook.Registration" name="Registration">
+    <adfmf:content id="com.tamcapp.mobilebook.Registration.1">
+      <adfmf:amx/>
+    </adfmf:content>
+  </adfmf:feature>
+    <adfmf:feature id="com.tamcapp.mobilebook.Springboard" name="Springboard" >
+    <adfmf:content id="com.tamcapp.mobilebook.Springboard.1">
+      <adfmf:amx file="com.tamcapp.mobilebook.Springboard/Springboard.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

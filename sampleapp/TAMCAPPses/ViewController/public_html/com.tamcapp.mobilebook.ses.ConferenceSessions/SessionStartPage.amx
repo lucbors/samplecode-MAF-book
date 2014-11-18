@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1" styleClass="tampcapp-background">
+        <amx:facet name="header">
+            <amx:outputText value="Sessions" styleClass="tamcapp-small-text" id="ot1"/>
+        </amx:facet>
+        <amx:listView var="row" id="lv1">
+            <amx:listItem id="li1" action="browse">
+                <amx:outputText value="Session Overview" id="ot2"/>
+            </amx:listItem>
+            <amx:listItem id="li2" action="evaluations" 
+                                   rendered="#{securityContext.userInRole['Speaker']}">
+                <amx:outputText value="Evaluations" id="ot3"/>
+            </amx:listItem>
+        </amx:listView>
+    </amx:panelPage>
+</amx:view>

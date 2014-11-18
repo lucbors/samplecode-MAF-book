@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="BrowseSessionsPageDef"
+                Package="com.tamcapp.mobilebook.ses.ConferenceSessions">
+    <parameters/>
+    <executables>
+        <variableIterator id="variables">
+            <variable Type="java.lang.String" Name="searchConferenceSessions_searchString" IsQueriable="false"/>
+        </variableIterator>
+        <iterator Binds="root" RangeSize="-1" DataControl="ConferenceSessions" id="ConferenceSessionsIterator"/>
+        <accessorIterator MasterBinding="ConferenceSessionsIterator" Binds="conferenceSessions" RangeSize="25"
+                          DataControl="ConferenceSessions" BeanClass="com.tamcapp.mobilebook.mobile.pojos.Session"
+                          id="conferenceSessionsIterator"/>
+    </executables>
+    <bindings>
+     
+        <tree IterBinding="conferenceSessionsIterator" id="conferenceSessions">
+            <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.ConferenceSession" Name="conferenceSessions0">
+                <AttrNames>
+                    <Item Value="id"/>
+                    <Item Value="title"/>
+                    <Item Value="presenterName"/>
+                    <Item Value="topic"/>
+                </AttrNames>
+                <Accessors>
+                    <Item Value="slot"/>
+                </Accessors>
+            </nodeDefinition>
+            <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.Slot" Name="sessions1">
+                <AttrNames>
+                    <Item Value="sessionDate"/>
+                    <Item Value="displayDate"/>
+                    <Item Value="displayDateNoTime"/>
+                    <Item Value="startTime"/>
+                    <Item Value="endTime"/>
+                </AttrNames>
+            </nodeDefinition>
+        </tree>
+        <methodAction id="addToSchedule" RequiresUpdateModel="true" Action="invokeMethod" MethodName="addToSchedule"
+                      IsViewObjectMethod="false" DataControl="ConferenceSessions"
+                      InstanceName="data.ConferenceSessions.dataProvider">
+            <NamedData NDName="id" NDValue="#{pageFlowScope.conferenceSessionBean.currentConferenceSession}"
+                       NDType="int"/>
+        </methodAction>
+        <methodAction id="searchConferenceSessions" RequiresUpdateModel="true" Action="invokeMethod"
+                      MethodName="searchConferenceSessions" IsViewObjectMethod="false" DataControl="ConferenceSessions"
+                      InstanceName="data.ConferenceSessions.dataProvider">
+            <NamedData NDName="searchString" NDType="java.lang.String"
+                       NDValue="${bindings.searchConferenceSessions_searchString}"/>
+        </methodAction>
+        <attributeValues IterBinding="variables" id="searchString">
+            <AttrNames>
+                <Item Value="searchConferenceSessions_searchString"/>
+            </AttrNames>
+        </attributeValues>
+    
+    </bindings>
+</pageDefinition>

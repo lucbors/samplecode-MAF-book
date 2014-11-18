@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Header" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandButton id="cb2"/>
+        </amx:facet>
+        <amx:panelFormLayout id="panelFormLayout1" labelPosition="start" fieldHalign="end" labelWidth="40%"
+                             fieldWidth="60%">
+            <amx:panelLabelAndMessage id="networklabel" label="Network">
+                <amx:outputText id="network" value="#{deviceScope.hardware.networkStatus}"/>
+                <amx:outputText id="network2" value="#{deviceScope.hardware.networkStatus eq 'none' ? '0' :'1'}"/>
+            </amx:panelLabelAndMessage>
+        </amx:panelFormLayout>
+        <dvtm:ledGauge id="ledGauge1" type="arrow" size="1%" 
+                       value="#{deviceScope.hardware.networkStatus eq 'none' ? '0' :  (deviceScope.hardware.networkStatus eq 'NotReachable' ? '0' : '1')}"
+                       animationDuration="5" maxValue="1" visualEffects="auto" animationOnDataChange="alphaFade">
+            <dvtm:threshold color="Red" maxValue="0"/>
+            <dvtm:threshold color="Green" maxValue="1"/>
+        </dvtm:ledGauge>
+    </amx:panelPage>
+</amx:view>

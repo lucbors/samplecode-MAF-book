@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="speakerSessionEvalPageDef"
+                Package="com.tamcapp.mobilebook.Sessions">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Evaluations" id="EvaluationsIterator"/>
+    <accessorIterator MasterBinding="EvaluationsIterator" Binds="scores" RangeSize="-1" DataControl="Evaluations"
+                      BeanClass="com.tamcapp.mobilebook.mobile.pojos.ScoreCount" id="scoresIterator"/>
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator1"/>
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator2"/>
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator3"/>
+    <iterator Binds="root" RangeSize="1" DataControl="Evaluations" id="EvaluationsIterator4"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="scoresIterator" id="scores">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.ScoreCount" Name="scores0">
+        <AttrNames>
+          <Item Value="count"/>
+          <Item Value="score"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="EvaluationsIterator1" id="skills">
+      <AttrNames>
+        <Item Value="skills"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EvaluationsIterator2" id="addedValue">
+      <AttrNames>
+        <Item Value="addedValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EvaluationsIterator3" id="materials">
+      <AttrNames>
+        <Item Value="materials"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EvaluationsIterator4" id="skills1">
+      <AttrNames>
+        <Item Value="skills"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">ReportIssues</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.Organization/ReportIssues.amx</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ReportIssues&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">134.66797</property>
+      <property
+         name="x">256.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">SessionHeadCount</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.Organization/SessionHeadCount.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SessionHeadCount&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">325.60156</property>
+      <property
+         name="x">260.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">Start</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.Organization/Start.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Start&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">226.86719</property>
+      <property
+         name="x">103.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View4"
+      to="View2">
+      <property
+         name="fromOutcome">issues</property>
+      <property
+         name="sdm:polyPoints">R46,144.0,223.30078,215.0,134.60156,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View4"
+      to="View3">
+      <property
+         name="fromOutcome">headcount</property>
+      <property
+         name="sdm:polyPoints">R54,144.0,230.30078,219.0,325.53516,L50</property>
+   </ControlFlowCase>
+</SDM>

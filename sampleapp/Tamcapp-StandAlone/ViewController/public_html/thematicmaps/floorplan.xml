@@ -1,0 +1,12 @@
+<basemap id="floorplan">
+    <layer id="floorplanLayer">
+        <image source="/thematicmaps/floorplan.png" width="762" height="650"/>
+    </layer>
+    <points>
+        <point name="roomOne"   x="85"  y="55"/>
+        <point name="roomTwo"   x="550" y="55"/>
+        <point name="roomThree" x="85"  y="760"/>
+        <point name="roomFour"  x="85"  y="380"/>
+        <point name="roomFive"  x="800" y="55"/>
+    </points>
+</basemap>

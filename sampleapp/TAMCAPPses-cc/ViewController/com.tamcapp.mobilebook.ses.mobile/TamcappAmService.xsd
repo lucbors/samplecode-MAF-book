@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema elementFormDefault="qualified" targetNamespace="/com/blogspot/lucbors/tamcapp/model/srv/common/types/" xmlns:ns0="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:ns1="http://xmlns.oracle.com/adf/svc/types/" xmlns:tns="/com/blogspot/lucbors/tamcapp/model/srv/common/types/" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" schemaLocation="AttendeesSDO.xsd"/>
+  <import namespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" schemaLocation="SearchAttendeesSDO.xsd"/>
+  <import namespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" schemaLocation="SearchSessionsSDO.xsd"/>
+  <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="BC4JService.xsd"/>
+  <import namespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" schemaLocation="AttendencesSDO.xsd"/>
+  <import namespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" schemaLocation="PresentationsSDO.xsd"/>
+  <import namespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" schemaLocation="GcmSubscribersSDO.xsd"/>
+  <element name="getAttendees">
+    <complexType>
+      <sequence>
+        <element name="id" type="long"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getAttendeesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createAttendees">
+    <complexType>
+      <sequence>
+        <element name="attendees" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createAttendeesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateAttendees">
+    <complexType>
+      <sequence>
+        <element name="attendees" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateAttendeesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="deleteAttendees">
+    <complexType>
+      <sequence>
+        <element name="attendees" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="deleteAttendeesResponse">
+    <complexType>
+      <sequence/>
+    </complexType>
+  </element>
+  <element name="mergeAttendees">
+    <complexType>
+      <sequence>
+        <element name="attendees" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="mergeAttendeesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findAttendees">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findAttendeesResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:AttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getAttendences">
+    <complexType>
+      <sequence>
+        <element name="id" type="long"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getAttendencesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createAttendences">
+    <complexType>
+      <sequence>
+        <element name="attendences" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createAttendencesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateAttendences">
+    <complexType>
+      <sequence>
+        <element name="attendences" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateAttendencesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="deleteAttendences">
+    <complexType>
+      <sequence>
+        <element name="attendences" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="deleteAttendencesResponse">
+    <complexType>
+      <sequence/>
+    </complexType>
+  </element>
+  <element name="mergeAttendences">
+    <complexType>
+      <sequence>
+        <element name="attendences" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="mergeAttendencesResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findAttendences">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findAttendencesResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:AttendencesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getGcmSubscribers">
+    <complexType>
+      <sequence>
+        <element name="username" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getGcmSubscribersResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:GcmSubscribersSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createGcmSubscribers">
+    <complexType>
+      <sequence>
+        <element name="gcmSubscribers" type="ns0:GcmSubscribersSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createGcmSubscribersResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:GcmSubscribersSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getPresentations">
+    <complexType>
+      <sequence>
+        <element name="id" type="long"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getPresentationsResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createPresentations">
+    <complexType>
+      <sequence>
+        <element name="presentations" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createPresentationsResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updatePresentations">
+    <complexType>
+      <sequence>
+        <element name="presentations" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updatePresentationsResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="deletePresentations">
+    <complexType>
+      <sequence>
+        <element name="presentations" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="deletePresentationsResponse">
+    <complexType>
+      <sequence/>
+    </complexType>
+  </element>
+  <element name="mergePresentations">
+    <complexType>
+      <sequence>
+        <element name="presentations" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="mergePresentationsResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findPresentations">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findPresentationsResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:PresentationsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="searchAttendees">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="b_searchString" type="string"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="searchAttendeesResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:SearchAttendeesSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findSessionsById">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="b_id" type="string"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findSessionsByIdResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:SearchSessionsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="searchSessions">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="b_searchString" type="string"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="searchSessionsResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:SearchSessionsSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

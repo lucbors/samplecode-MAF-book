@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="com.tamcapp.mobilebook.mobile">
+  <AdapterDataControl id="GooglePlacesClient" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.tamcapp.mobilebook.mobile.model.GooglePlacesClient"
+                      BeanClass="com.tamcapp.mobilebook.mobile.model.GooglePlacesClient"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.tamcapp.mobilebook.mobile.model.places.PlacesResultList"/>
+      <TypeInfo FullName="com.tamcapp.mobilebook.mobile.model.GooglePlacesClient"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="com.tamcapp.mobilebook.mobile.model.GooglePlacesClient"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

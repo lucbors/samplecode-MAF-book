@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="ScheduleStartPagePageDef"
+                Package="com.tamcapp.mobilebook.Schedule">
+    <parameters/>
+    <executables>
+    
+        <iterator Binds="root" RangeSize="25" DataControl="ScheduledSessions" id="ScheduledSessionsIterator"/>
+        <accessorIterator MasterBinding="ScheduledSessionsIterator" Binds="scheduledSessions" RangeSize="10"
+                          DataControl="ScheduledSessions" BeanClass="com.tamcapp.mobilebook.mobile.pojos.Schedule"
+                          id="scheduledSessionsIterator"/>
+    </executables>
+    <bindings>
+        <tree id="scheduledSessions" IterBinding="scheduledSessionsIterator">
+            <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.Schedule" Name="scheduledSessions0">
+                <AttrNames>
+                    <Item Value="id"/>
+                    <Item Value="presenterName"/>
+                    <Item Value="room"/>
+                    <Item Value="sessionAbstract"/>
+                    <Item Value="sessionEndDateTime"/>
+                    <Item Value="sessionStartDateTime"/>
+                    <Item Value="title"/>
+                    <Item Value="topic"/>
+                    <Item Value="displayDateNoTime"/>
+                    <Item Value="displayDate"/>
+                    
+                    
+                    <Item Value="showDelete"/>
+                </AttrNames>
+            </nodeDefinition>
+        </tree>
+       
+         <attributeValues IterBinding="ScheduledSessionsIterator" id="currentSession">
+      <AttrNames>
+        <Item Value="currentSession"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="ScheduledSessionsIterator" id="deleteSessionNo">
+      <AttrNames>
+        <Item Value="deleteSessionNo"/>
+      </AttrNames>
+    </attributeValues>
+       
+        <methodAction id="ShowDeleteButton" InstanceName="data.Sessions.dataProvider" DataControl="ScheduledSessions"
+                  RequiresUpdateModel="true" Action="invokeMethod" MethodName="ShowDeleteButton"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="id" NDValue="#{bindings.deleteSessionNo.inputValue}" NDType="int"/>
+    </methodAction>
+    <methodAction id="ClearDeleteButton" InstanceName="data.Sessions.dataProvider" DataControl="ScheduledSessions"
+                  RequiresUpdateModel="true" Action="invokeMethod" MethodName="ClearDeleteButton"
+                  IsViewObjectMethod="false"/>
+
+    
+    </bindings>
+</pageDefinition>

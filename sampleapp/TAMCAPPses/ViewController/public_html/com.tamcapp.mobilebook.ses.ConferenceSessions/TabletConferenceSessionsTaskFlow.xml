@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="TabletConferenceSessionsTaskFlow">
+    <default-activity>SessionTablet</default-activity>
+        <managed-bean id="__2a">
+            <managed-bean-name>conferenceSessionBean</managed-bean-name>
+            <managed-bean-class>com.tamcapp.mobilebook.ses.mobile.beans.ConferenceSessionBean</managed-bean-class>
+            <managed-bean-scope>pageFlow</managed-bean-scope>
+            <managed-property id="__18">
+                <property-name>currentConferenceSession</property-name>
+                <property-class>java.lang.String</property-class>
+                <value>-1</value>
+            </managed-property>
+        </managed-bean>
+        <managed-bean id="__2b">
+            <managed-bean-name>showDocumentBean</managed-bean-name>
+            <managed-bean-class>com.tamcapp.mobilebook.ses.mobile.beans.ShowDocumentBean</managed-bean-class>
+            <managed-bean-scope>application</managed-bean-scope>
+        </managed-bean>
+ 
+    <view id="SessionTablet">
+      <page>/com.tamcapp.mobilebook.ses.ConferenceSessions/tablet/SessionTablet.amx</page>
+    </view>
+  </task-flow-definition>
+</adfc-mobile-config>

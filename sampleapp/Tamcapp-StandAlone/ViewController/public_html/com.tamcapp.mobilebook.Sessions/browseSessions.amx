@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1" styleClass="tampcapp-background">
+        <amx:facet name="header">
+            <amx:outputText value="Browse Sessions" styleClass="tamcapp-small-text" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" text="back"  action="__back"/>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandLink inlineStyle="position:absolute; right:0; vertical-align:middle;"
+            actionListener="#{pageFlowScope.sessionBean.addToSchedule}"
+            >
+                                             
+            <amx:image 
+            source="/images/Add.png" inlineStyle="height:25px; width:25px;"/>
+            </amx:commandLink>
+        </amx:facet>
+        
+        
+         <amx:tableLayout id="tl1" width="100%" shortDesc="Table">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf2" width="100%" shortDesc="Cell">
+                    <amx:inputText value="" simple="true" id="inputText2"
+                                  styleClass="tamcapp-inputText-search" hintText="Search Session"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf4" width="48px" halign="center" shortDesc="Cell">
+                    <amx:commandButton id="cb1a"  shortDesc="Search Link"
+                                       icon="/images/find.png">
+                        <!--amx:setPropertyListener id="spl6" from="#{true}" to="#{pageFlowScope.HRBean.searchOn}"/-->
+                    </amx:commandButton>
+                </amx:cellFormat>
+                <!--amx:cellFormat id="cf1" shortDesc="ClearFilter Cell" width="48px" halign="center"
+                                rendered="#{bindings.filter.inputValue ne '' and pageFlowScope.HRBean.searchOn}">
+                    <amx:commandButton id="cb2" shortDesc="ClearFilter Button"
+                                       actionListener="#{bindings.Execute.execute}" icon="/images/clear_36.png"
+                                       styleClass="adfmf-commandButton-alert">
+                        <amx:setPropertyListener id="spl2" from="#{}" to="#{bindings.filter.inputValue}"/>
+                        <amx:setPropertyListener id="spl7" from="#{false}" to="#{pageFlowScope.HRBean.searchOn}"/>
+                    </amx:commandButton>
+                </amx:cellFormat-->
+            </amx:rowLayout>
+        </amx:tableLayout>
+        
+        <amx:listView var="row" value="#{bindings.sessions.collectionModel}" fetchSize="#{bindings.sessions.rangeSize}"
+                      dividerAttribute="slot.displayDateNoTime" dividerMode="all" id="lv1" collapsibleDividers="true"
+                      showDividerCount="true" collapsedDividers='"02 Jul 2014" '>
+            <amx:listItem id="li1" action="details" >
+                <amx:tableLayout width="100%" id="tl2">
+                    <amx:rowLayout id="rl2">
+                        <amx:cellFormat width="8px" halign="center" rowSpan="2" id="cf5" 
+                                        styleClass=" #{row.topic=='MAF' ? 'greenCell' : 'redCell' }"
+                                        valign="middle"
+                                        inlineStyle="margin:-1px -1px 0px 0px; padding:-1px -1px 0px 0px;">
+                            <!--amx:image source="#{row.topic=='ADF Mobile' ? '/images/green.png': '/images/red.png'}" id="i1"/-->
+                        </amx:cellFormat>
+                        <amx:cellFormat width="100%" height="28px" id="cf3">
+                            <amx:outputText value="#{row.title}"   styleClass="tamcapp-small-text" id="ot3"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl3">
+                        <amx:cellFormat width="100%" height="12px" id="cf1">
+                            <amx:outputText value="#{row.presenterName}" styleClass="tamcapp-smaller-text"
+                                            id="ot2"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:setPropertyListener from="#{row.id}"  to="#{pageFlowScope.currentSession}" type="action"/>
+            </amx:listItem>
+        </amx:listView>
+    </amx:panelPage>
+</amx:view>

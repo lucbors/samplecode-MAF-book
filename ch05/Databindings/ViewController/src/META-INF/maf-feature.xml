@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:loadBundle basename="com.tamcapp.mobilebook.ch05.mobile.ViewControllerBundle" var="viewcontrollerBundle"/>
+  <adfmf:feature id="com.tamcapp.mobilebook.ch05.SimpleDataBoundPage"
+                 name="Simple DataBound Page">
+    <adfmf:content id="com.tamcapp.mobilebook.ch05.SimpleDataBoundPage.1">
+      <adfmf:amx file="com.tamcapp.mobilebook.ch05.SimpleDataBoundPage/DataBoundPage.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.tamcapp.mobilebook.ch05.SimpleDataBoundPageTwo" name="SimpleDataBoundPageTwo">
+    <adfmf:content id="com.tamcapp.mobilebook.ch05.SimpleDataBoundPageTwo.1">
+      <adfmf:amx file="com.tamcapp.mobilebook.ch05.SimpleDataBoundPageTwo/DataBoundPageTwo.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

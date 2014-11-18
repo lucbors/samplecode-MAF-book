@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file source-language="en" original="com.tamcapp.mobilebook.ch05.mobile.ViewControllerBundle" datatype="x-oracle-adf">
+    <body>
+       <trans-unit id="com.tamcapp.mobilebook.ch05.mobile.model.pojo.Person.phone_Rule_1">
+        <source>Phone number not using the US Phone Format</source>
+        <target/>
+      </trans-unit>
+    <trans-unit id="com.tamcapp.mobilebook.ch05.mobile.model.pojo.Attendee.firstName_Rule_0">
+        <source>Must not be JOHN. Current value is wrong</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="THIS_IS_NOT_A_VALID_EMAIL_ADDR">
+        <source>This is not a valid Email Address</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="com.tamcapp.mobilebook.ch05.mobile.model.pojo.Attendee.lastName_Rule_0">
+        <source>The name is {0}</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="HEADER_OF_THIS_ONE">
+        <source>Header of this one</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="SIMPLEDATABOUNDPAGE">
+        <source>SimpleDataBoundPage</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="LABEL_FIRST_NAME">
+        <source>Label First Name</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="${adfBundle['com.tamcapp.mobilebook.ch05.mobile.ViewControllerBundle']['com.tamcapp.mobilebook.ch05.mobile.model.pojo.Attendee.lastName_Rule_0']}">
+        <source>The name is {0}</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="FIRST_NAME_AND_LAST_NAME_CANNO">
+        <source>First Name and Last Name cannot be the same</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="com.tamcapp.mobilebook.ch05.mobile.model.pojo.Attendee.email_LABEL">
+        <source>mail</source>
+        <target/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

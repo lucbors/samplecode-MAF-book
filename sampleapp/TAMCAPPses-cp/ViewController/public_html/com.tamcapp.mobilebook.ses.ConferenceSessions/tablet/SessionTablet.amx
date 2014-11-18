@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Conference Sesssions"
+                            id="ot1"/>
+        </amx:facet>
+        <amx:panelSplitter id="ps1">
+            <amx:facet name="navigator">
+                <amx:tableLayout id="tl1" width="100%">
+                    <amx:rowLayout id="rl1">
+                        <amx:cellFormat id="cf2" width="100%">
+                            <amx:inputText value="#{bindings.searchString.inputValue}" simple="true" id="inputText2"
+                                           styleClass="tamcapp-inputText-search" hintText="Enter search here...."/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf4" width="40px" halign="center">
+                            <amx:commandLink actionListener="#{bindings.searchConferenceSessions.execute}"
+                                             disabled="#{!bindings.searchConferenceSessions.enabled}" id="cl1">
+                                <amx:image id="image2" source="/images/Find.png"/>
+                                <amx:actionListener id="al6" binding="#{bindings.First.execute}"/>
+                            </amx:commandLink>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+                <amx:listView var="row" value="#{bindings.conferenceSessions.collectionModel}"
+                              fetchSize="#{bindings.conferenceSessions.rangeSize}" id="lv1">
+                    <amx:listItem id="li1" action="#{bindings.setCurrentRowWithKeyValue.execute}">
+                        <amx:tableLayout width="100%" id="tl2">
+                            <amx:rowLayout id="rl2">
+                                <amx:cellFormat width="8px" halign="center" rowSpan="2" id="cf5"
+                                                styleClass=" #{row.topic=='ADF Mobile' ? 'greenCell' : 'redCell' }"
+                                                valign="middle"
+                                                inlineStyle="margin:-1px -1px 0px 0px; padding:-1px -1px 0px 0px;">
+                                    <!--amx:image source="#{row.topic=='ADF Mobile' ? '/images/green.png': '/images/red.png'}" id="i1"/-->
+                                </amx:cellFormat>
+                                <amx:cellFormat width="100%" height="28px" id="cf3">
+                                    <amx:outputText value="#{row.title}" styleClass="tamcapp-small-text" id="ot3"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl3">
+                                <amx:cellFormat width="100%" height="12px" id="cf1">
+                                    <amx:outputText value="#{row.presenterName}" styleClass="tamcapp-smaller-text"
+                                                    id="ot2"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                        <amx:setPropertyListener from="#{row.rowKey}"
+                                                 to="#{pageFlowScope.conferenceSessionBean.currentConferenceSession}"
+                                                 type="action"/>
+                        <amx:actionListener id="al1" binding="#{bindings.addToSchedule.execute}" type="tapHold"/>
+                    </amx:listItem>
+                </amx:listView>
+            </amx:facet>
+            <amx:panelItem id="sesdet">
+                <amx:tableLayout id="tl3" width="100%" shortDesc="Detail Table">
+                <!--
+                rendered="#{pageFlowScope.conferenceSessionBean.currentConferenceSession !=null 
+                                                   &amp;&amp; pageFlowScope.conferenceSessionBean.currentConferenceSession !='empty'
+                                                   &amp;&amp; pageFlowScope.conferenceSessionBean.currentConferenceSession !='-1'}"
+                -->
+                    <amx:rowLayout id="rl11">
+                        <amx:cellFormat id="cf16" columnSpan="2" width="100%" shortDesc="Detail Cell">
+                            <amx:listView id="detailList">
+                                <amx:listItem id="listItem2" showLinkIcon="false" shortDesc="Details"
+                                              styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout id="tltd1" width="100%" shortDesc="Table Layout">
+                                        <amx:rowLayout id="rltd1">
+                                            <amx:cellFormat id="cftdi" rowSpan="2" width="44px" halign="center"
+                                                            shortDesc="Emp Cell format">
+                                                <!--amx:image id="imagedt1" source="#{bindings.pic.inputValue}"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Presenter Image"/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat id="cfdt1" width="100%" height="28px"
+                                                            shortDesc="Cell Format">
+                                                <amx:outputText value="#{bindings.presenterName.inputValue}"
+                                                                id="otname"/>
+                                            </amx:cellFormat>
+                                            <amx:cellFormat id="actionimg" width="40px" halign="end" valign="top" shortDesc="Cell"
+                                                            rowSpan="2">
+                                                <amx:commandLink inlineStyle="position:absolute; right:0; vertical-align:middle;"
+                                                                 actionListener="#{pageFlowScope.conferenceSessionBean.addToSchedule}">
+                                                    <amx:image source="/images/Add.png"
+                                                               inlineStyle="height:25px; width:25px;"/>
+                                                </amx:commandLink>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="rltd2">
+                                            <amx:cellFormat id="cftd2" width="100%" height="12px"
+                                                            shortDesc="Cell Format">
+                                                <amx:outputText id="titlet" value="#{bindings.title.inputValue}"
+                                                                styleClass="adfmf-listItem-captionText"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                </amx:listItem>
+                            </amx:listView>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl4">
+                        <amx:cellFormat id="cf6" width="50%" halign="center"  valign="top" shortDesc="Cell" height="30">
+                            <amx:outputText value="Details" id="ot4"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf7" width="50%" shortDesc="Cell" valign="top" height="30">
+                            <amx:outputText value="#{bindings.title.inputValue} abstract" id="ot5"
+                                            />
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl5">
+                        <amx:cellFormat id="cf8" height="50%" shortDesc="Cell" valign="top">
+                            <amx:listView id="lvprofile" styleClass="adfmf-listView-insetList"
+                                          inlineStyle="margin-top:0">
+                                <amx:listItem id="lip1" shortDesc="Phone listItem" styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout width="100%" id="ptl1" shortDesc="Phone table">
+                                        <amx:rowLayout id="prl11">
+                                            <amx:cellFormat width="44px" halign="center" rowSpan="2" id="pcf11"
+                                                            shortDesc="Phone Image Cell">
+                                                <!--amx:image source="/images/phone_58.png" id="im1"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Phone Image"/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat width="100%" height="12px" id="pcf12"
+                                                            shortDesc="Phone Text Cell">
+                                                <amx:outputText value="Session ID" id="ot11"
+                                                                styleClass="adfmf-listItem-captionText"
+                                                                inlineStyle="margin-top:1px;margin-bottom:-5px"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="prl12">
+                                            <amx:cellFormat width="100%" height="28px" id="pcf13"
+                                                            shortDesc="Phone Number Cell">
+                                                <amx:outputText value="#{bindings.id.inputValue}" id="ot12"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                </amx:listItem>
+                                <amx:listItem id="lip2" shortDesc="Email listIem" styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout width="100%" id="ptl2" shortDesc="Email Table">
+                                        <amx:rowLayout id="prl21">
+                                            <amx:cellFormat width="44px" halign="center" rowSpan="2" id="pcf21"
+                                                            shortDesc="Email Image Cell">
+                                                <!--amx:image source="/images/email_58.png" id="i2"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Email Image "/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat width="100%" height="12px" id="pcf22"
+                                                            shortDesc="Email Text Cell">
+                                                <amx:outputText value="Presenter name" id="ot21"
+                                                                styleClass="adfmf-listItem-captionText"
+                                                                inlineStyle="margin-top:1px;margin-bottom:-5px"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="prl22">
+                                            <amx:cellFormat width="100%" height="28px" id="pcf23"
+                                                            shortDesc="Email Data Cell">
+                                                <amx:outputText value="#{bindings.presenterName.inputValue}" id="ot22"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                </amx:listItem>
+                                <amx:listItem id="lip4" shortDesc="Org listIem" showLinkIcon="false"
+                                              styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout width="100%" id="ptl4" shortDesc="Org Table">
+                                        <amx:rowLayout id="prl41">
+                                            <amx:cellFormat width="44px" halign="center" rowSpan="2" id="pcf41"
+                                                            shortDesc="Org Image Cell">
+                                                <!--amx:image source="/images/organization_58.png" id="i4"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Org Image"/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat width="100%" height="12px" id="pcf42"
+                                                            shortDesc="Org Text Cell">
+                                                <amx:outputText value="Session Track" id="ot41"
+                                                                styleClass="adfmf-listItem-captionText"
+                                                                inlineStyle="margin-top:1px;margin-bottom:-5px"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="prl42">
+                                            <amx:cellFormat width="100%" height="28px" id="pcf43"
+                                                            shortDesc="Org Data Cell">
+                                                <amx:outputText value="#{bindings.topic.inputValue}" id="ot42"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                </amx:listItem>
+                                <amx:listItem id="lip5" shortDesc="Salary listIem" showLinkIcon="false"
+                                              styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout width="100%" id="ptl5" shortDesc="Salary Table">
+                                        <amx:rowLayout id="prl51">
+                                            <amx:cellFormat width="44px" halign="center" rowSpan="2" id="pcf51"
+                                                            shortDesc="Salary Image Cell">
+                                                <!--amx:image source="/images/salary_58.png" id="i5"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Salary Image"/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat width="100%" height="12px" id="pcf52"
+                                                            shortDesc="Salary Text Cell">
+                                                <amx:outputText value="Room" id="ot51"
+                                                                styleClass="adfmf-listItem-captionText"
+                                                                inlineStyle="margin-top:1px;margin-bottom:-5px"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="prl52">
+                                            <amx:cellFormat width="100%" height="28px" id="pcf53"
+                                                            shortDesc="Salary Data Cell">
+                                                <amx:outputText value="#{bindings.room.inputValue}" id="ot52"></amx:outputText>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                </amx:listItem>
+                            </amx:listView>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf9" height="50%" shortDesc="Cell" valign="top" rowSpan="7">
+                            <amx:listView var="row" id="lvorg" styleClass="adfmf-listView-insetList"
+                                          inlineStyle="margin-top:0;margin-bottom:0;margin-left:0;">
+                                <amx:listItem id="oli1" shortDesc="Organization listItem" showLinkIcon="false"
+                                              styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout width="100%" id="otl1" shortDesc="Org Mgr table">
+                                        <amx:rowLayout id="orl11">
+                                            <amx:cellFormat width="44px" halign="center" rowSpan="2" id="ocf11"
+                                                            shortDesc="Org Mgr Image Cell">
+                                                <!--amx:image source="#{bindings.orgMgrPic.inputValue}" id="oi1"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Organization Image"/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat width="100%" height="12px" id="ocf12"
+                                                            shortDesc="Org Mgr Text Cell">
+                                                <amx:outputText value="Session Abstract" id="oot11"
+                                                                styleClass="adfmf-listItem-captionText"
+                                                                inlineStyle="margin-top:1px;margin-bottom:-5px"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="rl12">
+                                            <amx:cellFormat width="100%" height="28px" id="ocf13"
+                                                            shortDesc="Org Mgr Cell">
+                                                <amx:outputText value="Swipe down to read more..." id="oot12"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                    <amx:inputText value="#{bindings.sessionAbstract.inputValue}" disabled="true"
+                                                   rows="11" id="ot14"/>
+                                </amx:listItem>
+                            </amx:listView>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl8">
+                        <amx:cellFormat id="cf12" width="50%" halign="center"  valign="top"  shortDesc="Cell" height="30">
+                            <amx:outputText value="Slot information" id="comptext"  styleClass="hr-detailtext"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl9">
+                        <amx:cellFormat id="cf13" width="60%" valign="top" shortDesc="Cell">
+                            <amx:listView var="row" id="lvcomp" styleClass="adfmf-listView-insetList"
+                                          inlineStyle="margin-top:0">
+                                <amx:listItem id="cli1" shortDesc="Salary Role listItem" showLinkIcon="false"
+                                              styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout width="100%" id="ctl1" shortDesc="Salary Role table">
+                                        <amx:rowLayout id="crl11">
+                                            <amx:cellFormat width="44px" halign="center" rowSpan="2" id="ccf11"
+                                                            shortDesc="Salary Role Image Cell">
+                                                <!--amx:image source="/images/salary_58.png" id="ci1"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Salary Role Image"/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat width="100%" height="12px" id="ccf12"
+                                                            shortDesc="Salary Role Text Cell">
+                                                <amx:outputText value="Session Date" id="cot11"
+                                                                styleClass="adfmf-listItem-captionText"
+                                                                inlineStyle="margin-top:1px;margin-bottom:-5px"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="crl12">
+                                            <amx:cellFormat width="100%" height="28px" id="ccf13"
+                                                            shortDesc="Salary Role Cell">
+                                                <amx:outputText value="#{bindings.displayDateNoTime.inputValue}"
+                                                                id="id1"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                </amx:listItem>
+                                <amx:listItem id="cli2" shortDesc="Salary Org listItem" showLinkIcon="false"
+                                              styleClass="hr-listItem-noselect">
+                                    <amx:tableLayout width="100%" id="ctl2" shortDesc="Salary Org table">
+                                        <amx:rowLayout id="crl21">
+                                            <amx:cellFormat width="44px" halign="center" rowSpan="2" id="ccf21"
+                                                            shortDesc="Salary Org Image Cell">
+                                                <!--amx:image source="/images/clock_58.png" id="ci2"
+                                                           inlineStyle="height:34px;width:34px;margin-top:4px"
+                                                           shortDesc="Salary Role Image"/-->
+                                            </amx:cellFormat>
+                                            <amx:cellFormat width="100%" height="12px" id="ccf22"
+                                                            shortDesc="Salary Org Text Cell">
+                                                <amx:outputText value="Session Time" id="cot21"
+                                                                styleClass="adfmf-listItem-captionText"
+                                                                inlineStyle="margin-top:1px;margin-bottom:-5px"/>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                        <amx:rowLayout id="crl22">
+                                            <amx:cellFormat width="100%" height="28px" id="ccf23"
+                                                            shortDesc="Salary Org Cell">
+                                                <amx:outputText value="#{bindings.displayStartTime.inputValue} - #{bindings.displayEndTime.inputValue}"
+                                                                id="ot10a" styleClass="tamcapp-smaller-text"></amx:outputText>
+                                            </amx:cellFormat>
+                                        </amx:rowLayout>
+                                    </amx:tableLayout>
+                                </amx:listItem>
+                            </amx:listView>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf14" width="50%" shortDesc="Cell"/>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl6">
+                        <amx:cellFormat id="cf10" columnSpan="2" halign="center"  valign="top" width="100%" height="30" shortDesc="Cell">
+                            <amx:outputText value="Evaluations" id="directtext" styleClass="hr-detailtext"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <!--
+                    <amx:rowLayout id="rl7"> 
+                       <amx:cellFormat id="cf11" width="100%" shortDesc="Cell" columnSpan="2">
+                            <amx:panelGroupLayout id="pgl3" layout="horizontal"
+                                                  styleClass="adfmf-panelGroupLayout-groupBox" halign="center"
+                                                  inlineStyle="margin-top:0">
+                        -->
+                    <!--amx:panelGroupLayout id="nodatapgl" halign="center"
+                                                      rendered="#{bindings.reportCount.inputValue eq 0}">
+                                    <amx:image id="nodataimg" source="/images/noDirect_58.png"
+                                               shortDesc="No Data Image"/>
+                                    <amx:outputText value="No evaluations for #{bindings.title.inputValue}"
+                                                    id="norepstext" styleClass="hr-bgtextblack"/>
+                                </amx:panelGroupLayout-->
+                    <!--amx:iterator var="row" value="#{bindings.reports.collectionModel}"
+                                              id="directsiterator"-->
+                    <!--
+                                    <dvtm:dialGauge minValue="0" maxValue="5" background="rectangleDarkCustom"
+                                                    indicator="needleDark" value="#{bindings.skills.inputValue}"
+                                                    id="dg1" animationDuration="2500">
+                                        <dvtm:gaugeLabelFormat scaling="auto">
+                                            <amx:convertNumber id="cn1" type="number" integerOnly="true"
+                                                               minIntegerDigits="1" maxIntegerDigits="1"
+                                                               minFractionDigits="0" maxFractionDigits="0"/>
+                                        </dvtm:gaugeLabelFormat>
+                                    </dvtm:dialGauge>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.addedValue.inputValue}"
+                                                    id="dg2" background="rectangleDarkCustom" indicator="needleDark"
+                                                    animationDuration="2500"/>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.materials.inputValue}"
+                                                    id="dg3" background="rectangleDarkCustom" indicator="needleDark"
+                                                    animationDuration="2500"></dvtm:dialGauge>
+                               -->
+                    <!--/amx:iterator-->
+                    <!--
+                            </amx:panelGroupLayout>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    -->
+                    <amx:rowLayout>
+                        <amx:cellFormat width="100%" height="200px" halign="center" columnSpan="2">
+                            <amx:panelGroupLayout id="pglOut" inlineStyle="width:100%" layout="horizontal" scrollPolicy="scroll">
+                                <amx:panelGroupLayout id="pgl3" halign="center" inlineStyle="width:150px;height:175px">
+                                    <amx:outputText value="Skills" styleClass="tamcapp-smaller-text"/>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" background="circleLightCustom"
+                                                    indicator="needleLight" value="#{bindings.skills.inputValue}"
+                                                    id="dg1" animationDuration="2500">
+                                        <dvtm:gaugeLabelFormat scaling="auto">
+                                            <amx:convertNumber id="cn1" type="number" integerOnly="true"
+                                                               minIntegerDigits="1" maxIntegerDigits="1"
+                                                               minFractionDigits="0" maxFractionDigits="0"/>
+                                        </dvtm:gaugeLabelFormat>
+                                    </dvtm:dialGauge>
+                                </amx:panelGroupLayout>
+                                <amx:panelGroupLayout id="pgl3a" halign="center" inlineStyle="width:150px;height:175px">
+                                    <amx:outputText value="Added Value" styleClass="tamcapp-smaller-text"/>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.addedValue.inputValue}"
+                                                    id="dg2" background="circleLightCustom" indicator="needleLight"
+                                                    animationDuration="2500">
+                                                                       <dvtm:gaugeLabelFormat scaling="auto">
+                                            <amx:convertNumber id="cn2" type="number" integerOnly="true"
+                                                               minIntegerDigits="1" maxIntegerDigits="1"
+                                                               minFractionDigits="0" maxFractionDigits="0"/>
+                                        </dvtm:gaugeLabelFormat>
+                                    </dvtm:dialGauge>
+                     
+                                </amx:panelGroupLayout>
+                                <amx:panelGroupLayout id="pgl3b" halign="center" inlineStyle="width:150px;height:175px">
+                                    <amx:outputText value="Materials" styleClass="tamcapp-smaller-text"/>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.materials.inputValue}"
+                                                    id="dg3" background="circleLightCustom" indicator="needleLight"
+                                                    animationDuration="2500">                   <dvtm:gaugeLabelFormat scaling="auto">
+                                            <amx:convertNumber id="cn3" type="number" integerOnly="true"
+                                                               minIntegerDigits="1" maxIntegerDigits="1"
+                                                               minFractionDigits="0" maxFractionDigits="0"/>
+                                        </dvtm:gaugeLabelFormat>
+                                    </dvtm:dialGauge>
+                     
+                                </amx:panelGroupLayout>
+                                <amx:panelGroupLayout id="pgl3c" halign="center" inlineStyle="width:150px;height:175px">
+                                    <amx:outputText value="Other" styleClass="tamcapp-smaller-text"/>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.addedValue.inputValue}"
+                                                    id="dg3a" background="circleLightCustom" indicator="needleLight"
+                                                    animationDuration="2500">                   <dvtm:gaugeLabelFormat scaling="auto">
+                                            <amx:convertNumber id="cn4" type="number" integerOnly="true"
+                                                               minIntegerDigits="1" maxIntegerDigits="1"
+                                                               minFractionDigits="0" maxFractionDigits="0"/>
+                                        </dvtm:gaugeLabelFormat>
+                                    </dvtm:dialGauge>
+                     
+                                </amx:panelGroupLayout>
+                                <amx:panelGroupLayout id="pgl3d" halign="center" inlineStyle="width:150px;height:175px">
+                                    <amx:outputText value="Slides" styleClass="tamcapp-smaller-text"/>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.skills.inputValue}"
+                                                    id="dg3b" background="circleLightCustom" indicator="needleLight"
+                                                    animationDuration="2500">                   <dvtm:gaugeLabelFormat scaling="auto">
+                                            <amx:convertNumber id="cn5" type="number" integerOnly="true"
+                                                               minIntegerDigits="1" maxIntegerDigits="1"
+                                                               minFractionDigits="0" maxFractionDigits="0"/>
+                                        </dvtm:gaugeLabelFormat>
+                                    </dvtm:dialGauge>
+                     
+                                </amx:panelGroupLayout>
+                                <amx:panelGroupLayout id="pgl3e" halign="center" inlineStyle="width:150px;height:175px">
+                                    <amx:outputText value="Room" styleClass="tamcapp-smaller-text"/>
+                                    <dvtm:dialGauge minValue="0" maxValue="5" value="#{bindings.materials.inputValue}"
+                                                    id="dg3c" background="circleLightCustom" indicator="needleLight"
+                                                    animationDuration="2500">
+                                                                       <dvtm:gaugeLabelFormat scaling="auto">
+                                            <amx:convertNumber id="cn6" type="number" integerOnly="true"
+                                                               minIntegerDigits="1" maxIntegerDigits="1"
+                                                               minFractionDigits="0" maxFractionDigits="0"/>
+                                        </dvtm:gaugeLabelFormat>
+                                    </dvtm:dialGauge>
+                     
+                                </amx:panelGroupLayout>
+                            </amx:panelGroupLayout>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout>
+                        <amx:cellFormat width="100%" halign="center" columnSpan="2">
+                            <dvtm:barChart var="row" value="#{bindings.scores.collectionModel}" id="bc1"
+                                           animationOnDisplay="auto" animationOnDataChange="auto"
+                                           animationDuration="2500">
+                                <amx:facet name="dataStamp">
+                                    <dvtm:chartDataItem group="#{row.score}" value="#{row.count}"
+                                                        series="#{bindings.scores.hints.count.label}" id="cdi1"/>
+                                </amx:facet>
+                                <dvtm:legend rendered="false" id="l1"/>
+                            </dvtm:barChart>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:panelItem>
+            <amx:panelItem id="seseval"></amx:panelItem>
+        </amx:panelSplitter>
+    </amx:panelPage>
+</amx:view>

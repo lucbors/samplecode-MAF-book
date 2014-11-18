@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Graph" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb2" action="__back"/>
+        </amx:facet>
+        <amx:facet name="secondary"></amx:facet>
+        <dvtm:barChart var="row" value="#{bindings.distribution.collectionModel}" animationOnDisplay="auto"
+                       animationDuration="2" id="bc1">
+            <amx:facet name="dataStamp">
+                <dvtm:chartDataItem group="#{row.country}" value="#{row.count}"
+                                    series="#{bindings.distribution.hints.count.label}" id="cdi1"/>
+            </amx:facet>
+            <dvtm:yAxis majorIncrement="1" minorIncrement="1"/>
+            <dvtm:legend rendered="false" id="l1"/>
+        </dvtm:barChart>
+    </amx:panelPage>
+</amx:view>

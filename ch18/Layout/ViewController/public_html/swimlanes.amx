@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Swim Lanes" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary"></amx:facet>
+        <amx:facet name="secondary"></amx:facet>
+        <amx:outputText value="Header text for swimlanes"/>
+        <amx:panelGroupLayout id="pgl1out" inlineStyle="width:100%" layout="horizontal" scrollPolicy="scroll">
+            <amx:panelGroupLayout id="pgl2a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Aqua;width:100px;height:100px">
+                <amx:outputText value="First Box" id="ot1a"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl3a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Red;width:100px;height:100px">
+                <amx:outputText value="Second Box" id="ot2a"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl4a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Green;width:100px;height:100px">
+                <amx:outputText value="Third Box" id="ot3a"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl5a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="width:100px;height:100px">
+                <amx:outputText value="Fourth Box" id="o42a"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl6a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Aqua;width:100px;height:100px">
+                <amx:outputText value="Fifth Box" id="ot5a"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl7a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Red;width:100px;height:100px">
+                <amx:outputText value="Sixth Box" id="ot6a"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl8a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Green;width:100px;height:100px">
+                <amx:outputText value="Seventh Box" id="ot7a"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl9a" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="width:100px;height:100px">
+                <amx:outputText value="Eight Box" id="ot8a"/>
+            </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+        <amx:panelGroupLayout id="pgl1outb" inlineStyle="width:100%" layout="horizontal" scrollPolicy="scroll">
+            <amx:panelGroupLayout id="pgl2b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Aqua;width:100px;height:100px">
+                <amx:outputText value="First Box" id="ot1b"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl3b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Red;width:100px;height:100px">
+                <amx:outputText value="Second Box" id="ot2b"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl4b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Green;width:100px;height:100px">
+                <amx:outputText value="Third Box" id="ot3b"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl5b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="width:100px;height:100px">
+                <amx:outputText value="Fourth Box" id="ot4b"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl6b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Aqua;width:100px;height:100px">
+                <amx:outputText value="Fifth Box" id="ot5b"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl7b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Red;width:100px;height:100px">
+                <amx:outputText value="Sixth Box" id="ot6b"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl8b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Green;width:100px;height:100px">
+                <amx:outputText value="Seventh Box" id="ot7b"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl9b" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="width:100px;height:100px">
+                <amx:outputText value="Eight Box" id="ot8b"/>
+            </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+
+      <amx:panelGroupLayout id="pgl1outc" inlineStyle="width:100%" layout="horizontal" scrollPolicy="scroll">
+            <amx:panelGroupLayout id="pgl2c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Aqua;width:100px;height:100px">
+                <amx:outputText value="First Box" id="ot1c"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl3c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Red;width:100px;height:100px">
+                <amx:outputText value="Second Box" id="ot2c"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl4c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Green;width:100px;height:100px">
+                <amx:outputText value="Third Box" id="ot3c"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl5c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="width:100px;height:100px">
+                <amx:outputText value="Fourth Box" id="ot4c"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl6c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Aqua;width:100px;height:100px">
+                <amx:outputText value="Fifth Box" id="ot5c"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl7c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Red;width:100px;height:100px">
+                <amx:outputText value="Sixth Box" id="ot6c"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl8c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="background-color:Green;width:100px;height:100px">
+                <amx:outputText value="Seventh Box" id="ot7c"/>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl9c" styleClass="adfmf-panelGroupLayout-groupBox"
+                                  inlineStyle="width:100px;height:100px">
+                <amx:outputText value="Eight Box" id="ot8c"/>
+            </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+
+    </amx:panelPage>
+</amx:view>

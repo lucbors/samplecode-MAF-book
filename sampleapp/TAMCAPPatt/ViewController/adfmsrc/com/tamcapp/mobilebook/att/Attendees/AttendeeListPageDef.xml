@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="AttendeeListPageDef"
+                Package="com.tamcapp.mobilebook.att.Attendees">
+   <parameters/>
+  <executables>
+ 
+    <iterator Binds="root" RangeSize="25" DataControl="Attendees" id="AttendeesIterator"/>
+    <accessorIterator MasterBinding="AttendeesIterator" Binds="attendees" RangeSize="25" DataControl="Attendees"
+                      BeanClass="com.tamcapp.mobilebook.att.mobile.pojos.Person" id="attendeesIterator"/>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="searchAttendees_searchString" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <tree IterBinding="attendeesIterator" id="attendees">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.att.mobile.pojos.Person" Name="attendees0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="lastName"/>
+          <Item Value="firstName"/>
+          <Item Value="organization"/>
+        
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="searchAttendees" RequiresUpdateModel="true" Action="invokeMethod" MethodName="searchAttendees"
+                  IsViewObjectMethod="false" DataControl="Attendees" InstanceName="data.Attendees.dataProvider">
+      <NamedData NDName="searchString" NDType="java.lang.String" NDValue="${bindings.searchAttendees_searchString}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="searchString">
+      <AttrNames>
+        <Item Value="searchAttendees_searchString"/>
+      </AttrNames>
+    </attributeValues>
+   
+  </bindings>
+</pageDefinition>

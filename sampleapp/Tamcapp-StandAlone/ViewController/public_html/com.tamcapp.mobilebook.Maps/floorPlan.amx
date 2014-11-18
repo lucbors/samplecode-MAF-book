@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1" styleClass="tampcapp-background">
+        <amx:facet name="header">
+            <amx:outputText value="Conference floorplan" styleClass="tamcapp-small-text" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" text="Overview" action="__back"/>
+        </amx:facet>
+        
+        
+        
+         <dvtm:thematicMap basemap="floorplan" id="tm1" source="/thematicmaps/floorplan.xml"
+                          animationOnDisplay="alphaFade" animationOnMapChange="cubeToLeft">
+            <dvtm:areaLayer layer="floorplanLayer" id="al1" areaLabelDisplay="off">
+                <dvtm:pointDataLayer id="pdl1" value="#{bindings.hotspots.collectionModel}" var="row"
+                                     dataSelection="none">
+                    <dvtm:pointLocation pointName="#{row.area}" id="pl1">
+                        <dvtm:marker id="marker1" value="#{row.areanumber}" fillColor="#636F57" opacity="0.0" scaleX="2"
+                                     scaleY="2" shortDesc="#{row.info}" shape="circle" labelDisplay="on"
+                                     labelPosition="center" labelStyle="font-size:0px;color:white;"
+                                     gradientEffect="auto">
+                            <amx:setPropertyListener from="#{row.info}" to="#{pageFlowScope.info}"/>
+                            <amx:setPropertyListener to="#{pageFlowScope.areanumber}" from="#{row.areanumber}"/>
+                            <amx:setPropertyListener to="#{pageFlowScope.description}" from="#{row.description}"/>
+                            <amx:showPopupBehavior popupId="p1" align="overlapTop" alignId="tm1"/>
+                        </dvtm:marker>
+                    </dvtm:pointLocation>
+                </dvtm:pointDataLayer>
+            </dvtm:areaLayer>
+        </dvtm:thematicMap>
+    </amx:panelPage>
+    <amx:popup id="p1" autoDismiss="true" animation="slideRight" inlineStyle="padding:0px;">
+        <amx:tableLayout id="tl1" width="75%" inlineStyle="width:300px;height:150px;">
+            <amx:rowLayout id="rl911">
+                <amx:cellFormat id="cf182" styleClass="so-panelHeader" valign="top" width="100%">
+                    <amx:outputText value="Room Information" id="ot171" styleClass="so-panelHeader-text"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl2">
+                <amx:cellFormat id="cf1" valign="top" inlineStyle="width:400px;height:120px;">
+                    <amx:tableLayout id="t93" width="100%" cellSpacing="8" styleClass="prd-popup">
+                        <amx:rowLayout id="rl8">
+                            <amx:cellFormat id="cf92" width="20%" valign="top">
+                                <amx:outputText value="Info" id="ot95" styleClass="so-PFL-label"></amx:outputText>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf913" width="80%" valign="top" halign="start">
+                                <amx:outputText value="#{pageFlowScope.info}" id="ot41" styleClass="so-PFL-value">
+                                    <amx:convertNumber groupingUsed="true"/>
+                                </amx:outputText>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                        <amx:rowLayout id="rl6">
+                            <amx:cellFormat id="cf98" width="20%" valign="top">
+                                <amx:outputText value="Description" id="ot93" styleClass="so-PFL-label"/>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf99" width="80%" valign="top" halign="start">
+                                <!--amx:inputText  rows="2"  value="#{pageFlowScope.description}" id="ot91" 
+                                styleClass="so-PFL-value" 
+                                readOnly="true"
+                                /-->
+                                <amx:outputText value="#{pageFlowScope.description}" id="ot91"
+                                                styleClass="so-PFL-value"/>
+                            </amx:cellFormat>
+                        </amx:rowLayout>
+                    </amx:tableLayout>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+      
+    </amx:popup>
+</amx:view>

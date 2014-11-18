@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="createAccidentReport">
+    <default-activity>hasCamera</default-activity>
+    <router id="hasCamera">
+      <case id="__4">
+        <expression>#{deviceScope.hardware.hasCamera}</expression>
+        <outcome>yes</outcome>
+      </case>
+      <case id="__5">
+        <expression>#{!deviceScope.hardware.hasCamera}</expression>
+        <outcome>no</outcome>
+      </case>
+      <default-outcome>yes</default-outcome>
+    </router>
+    <view id="takePictureAndSendEmail"></view>
+    <view id="sendEmail">
+      <page>/sendEmail.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>hasCamera</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>yes</from-outcome>
+        <to-activity-id>takePictureAndSendEmail</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>no</from-outcome>
+        <to-activity-id>sendEmail</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

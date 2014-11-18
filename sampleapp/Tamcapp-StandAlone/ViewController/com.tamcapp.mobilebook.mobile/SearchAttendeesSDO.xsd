@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:sdoJava="commonj.sdo/java" sdoJava:package="com.blogspot.lucbors.tamcapp.model.vo.common" xmlns="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>Search Attendees</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="commonj.sdo/java" schemaLocation="sdoJava.xsd"/>
+  <xsd:complexType name="SearchAttendeesSDO">
+    <xsd:annotation>
+      <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" nillable="true" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Organization" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Fullname" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="searchAttendeesSDO" type="SearchAttendeesSDO"/>
+</xsd:schema>

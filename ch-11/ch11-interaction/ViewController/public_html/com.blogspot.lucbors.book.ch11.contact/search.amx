@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+   
+    <amx:facet name="secondary">
+    <amx:commandButton actionListener="#{bindings.findContacts.execute}" text="Find"
+                       disabled="#{!bindings.findContacts.enabled}" action="results" id="cb1"/>
+   </amx:facet>
+    <amx:panelFormLayout id="pfl1">
+      <amx:inputText value="#{bindings.contactFields.inputValue}" label="#{bindings.contactFields.hints.label}"
+                     id="it3"/>
+      <amx:inputText value="#{bindings.filter.inputValue}" label="#{bindings.filter.hints.label}" id="it2"/>
+     </amx:panelFormLayout>
+                <amx:listView var="row" value="#{bindings.Contact.collectionModel}" fetchSize="#{bindings.Contact.rangeSize}"
+                  selectedRowKeys="#{bindings.Contact.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.Contact.collectionModel.makeCurrent}" showMoreStrategy="autoScroll"
+                  bufferStrategy="viewport" id="lv1"  >
+      <amx:listItem id="li1" action="details" showLinkIcon="true">
+        <amx:outputText value="#{row.displayName}" id="ot2"/>
+        <amx:setPropertyListener from="#{row.rowKey}" to="#{pageFlowScope.currentCon}" id="spl2"/>
+        <amx:setPropertyListener from="#{bindings.contactFields.inputValue}" to="#{pageFlowScope.fields}" id="spl1"/>
+        <amx:setPropertyListener from="#{bindings.filter.inputValue}" to="#{pageFlowScope.filter}" id="spl3"/>        
+       <amx:setPropertyListener from="#{row}" to="#{pageFlowScope.currentConRow}" id="spl2a"/>
+     
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>
+
+
+

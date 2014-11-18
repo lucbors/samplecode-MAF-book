@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="mapPageDef" Package="map">
+  <parameters/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="GooglePlacesClient" id="GooglePlacesClientIterator"/>
+    <accessorIterator MasterBinding="GooglePlacesClientIterator" Binds="placesResult" RangeSize="25"
+                      DataControl="GooglePlacesClient"
+                      BeanClass="com.tamcapp.mobilebook.mobile.model.places.PlacesResultList"
+                      id="placesResultIterator"/>
+    <accessorIterator MasterBinding="placesResultIterator" Binds="placesResults" RangeSize="-1"
+                      DataControl="GooglePlacesClient"
+                      BeanClass="com.tamcapp.mobilebook.mobile.model.places.PlacesResult" id="placesResultsIterator"/>
+    <invokeAction id="getPoints" Binds="searchAction"/>
+  </executables>
+   <bindings>
+    <tree IterBinding="placesResultsIterator" id="placesResults">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.model.places.PlacesResult" Name="placesResults0">
+        <AttrNames>
+          <Item Value="vicinity"/>
+          <Item Value="rating"/>
+          <Item Value="name"/>
+          <Item Value="types"/>
+          <Item Value="icon"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="searchAction" InstanceName="data.GooglePlacesClient.dataProvider" DataControl="GooglePlacesClient"
+                  RequiresUpdateModel="true" Action="invokeMethod" MethodName="searchAction"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="mapType" NDType="java.lang.String"/>
+    </methodAction>
+   
+  </bindings>
+</pageDefinition>

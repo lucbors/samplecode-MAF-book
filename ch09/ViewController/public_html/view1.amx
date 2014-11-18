@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+    </amx:facet>
+    <amx:facet name="secondary">
+  <amx:commandButton action="next" text="next" />
+    </amx:facet>
+    <amx:inputText label="first name" value="#{pageFlowScope.simpleBean.firstName}"  id="it1"/>
+    <amx:inputText label="last name" value="#{pageFlowScope.simpleBean.lastName}"  id="it2"/>
+    <amx:panelLabelAndMessage label="full name" id="plam1">
+      <amx:outputText value="#{pageFlowScope.simpleBean.fullName}" id="ot2"/>
+    </amx:panelLabelAndMessage>
+  </amx:panelPage>
+</amx:view>

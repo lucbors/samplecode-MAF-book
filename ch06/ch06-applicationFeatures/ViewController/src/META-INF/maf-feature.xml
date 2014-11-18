@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature1" name="feature1" icon="images/1-s.png"
+                 image="images/feature1.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature1.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature1/page-1.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature2" name="feature2" icon="images/2-s.png"
+                 image="images/feature2.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature2.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature2/page-2.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature3" name="feature3" icon="images/3-s.png"
+                 image="images/feature3.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature3.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature3/page-3.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature4" name="feature4" icon="images/4-s.png"
+                 image="images/feature4.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature4.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature4/page-4.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature5" name="feature5" icon="images/5-s.png"
+                 image="images/feature5.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature5.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature5/page-5.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature6" name="feature6" icon="images/6-s.png"
+                 image="images/feature6.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature6.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature6/page-6.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature7" name="feature7" icon="images/7-s.png"
+                 image="images/feature7.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature7.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature7/page-7.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature8" name="feature8" icon="images/8-s.png"
+                 image="images/feature8.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature8.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature8/page-8.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.feature9" name="feature9" icon="images/9-s.png"
+                 image="images/feature9.png">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.feature9.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.feature9/page-9.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="com.blogspot.lucbors.book.ch06.customSpringboard" name="customSpringboard">
+    <adfmf:content id="com.blogspot.lucbors.book.ch06.customSpringboard.1">
+      <adfmf:amx file="com.blogspot.lucbors.book.ch06.customSpringboard/customSpringboard.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

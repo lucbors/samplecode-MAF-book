@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.tamcapp.mobilebook.ch05.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/com.tamcapp.mobilebook.ch05.SimpleDataBoundPage/DataBoundPage.amx"
+          usageId="com_tamcapp_mobilebook_ch05_mobile_DataBoundPagePageDef"/>
+    <page path="/com.tamcapp.mobilebook.ch05.SimpleDataBoundPageTwo/DataBoundPageTwo.amx"
+          usageId="com_tamcapp_mobilebook_ch05_mobile_DataBoundPageTwoPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_tamcapp_mobilebook_ch05_mobile_DataBoundPagePageDef"
+          path="com.tamcapp.mobilebook.ch05.SimpleDataBoundPage.DataBoundPagePageDef"/>
+    <page id="com_tamcapp_mobilebook_ch05_mobile_DataBoundPageTwoPageDef"
+          path="com.tamcapp.mobilebook.ch05.SimpleDataBoundPageTwo.DataBoundPageTwoPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="AttendeesService" path="com.tamcapp.mobilebook.ch05.mobile.AttendeesService"/>
+  </dataControlUsages>
+</Application>
+ 

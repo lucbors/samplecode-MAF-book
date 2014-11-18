@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" action="__back" text="List" />
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1" labelWidth="50%">
+            <amx:panelLabelAndMessage label="#{bindings.id.hints.label}" id="plam7">
+                <amx:outputText value="#{bindings.id.inputValue}" id="ot8"/>
+            </amx:panelLabelAndMessage>
+            <amx:panelLabelAndMessage label="#{bindings.displayName.hints.label}" id="plam6">
+                <amx:outputText value="#{bindings.displayName.inputValue}" id="ot7"/>
+            </amx:panelLabelAndMessage>
+           </amx:panelFormLayout>
+    
+     <amx:outputText id="addrlabel" value="Addresses" />
+     <amx:outputText value="#{pageFlowScope.filter}"/>
+        <amx:listView var="row" value="#{bindings.addresses.collectionModel}"
+                      fetchSize="#{bindings.addresses.rangeSize}" id="lv2" >
+            <amx:listItem id="li2" showLinkIcon="false">
+                <amx:outputText value="#{row.type}" id="type" />
+                <amx:outputText value="#{row.streetAddress}, #{row.locality}" id="address"
+                                />
+            </amx:listItem>
+        </amx:listView>
+       
+        <amx:listView var="row" value="#{pageFlowScope.currentConRow}"
+                       id="lv2a" >
+            <amx:listItem id="li2a" showLinkIcon="false">
+                <amx:outputText value="#{row.type}" id="type2" />
+                <amx:outputText value="#{row.streetAddress}, #{row.locality}" id="address2"
+                                />
+            </amx:listItem>
+        </amx:listView>
+ 
+ 
+  </amx:panelPage>
+</amx:view>

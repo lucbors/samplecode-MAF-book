@@ -1,0 +1,7 @@
+#Ignore these directories
+deploy
+classes
+.data
+
+#ignore these files
+*.class

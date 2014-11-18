@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="/com/blogspot/lucbors/server/adf/push/model/vo/common/" xmlns:sdoJava="commonj.sdo/java" sdoJava:package="com.blogspot.lucbors.server.adf.push.model.vo.common" xmlns="/com/blogspot/lucbors/server/adf/push/model/vo/common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="commonj.sdo/java" schemaLocation="sdoJava.xsd"/>
+  <xsd:complexType name="GcmSubscribersSDO">
+    <xsd:annotation>
+      <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+          <attribute>Username</attribute>
+        </key>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ApplicationId" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Email" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Username" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="DeviceToken" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="DeviceType" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="gcmSubscribersSDO" type="GcmSubscribersSDO"/>
+</xsd:schema>

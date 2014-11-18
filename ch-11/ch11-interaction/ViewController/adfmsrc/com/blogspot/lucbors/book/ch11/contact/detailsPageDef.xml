@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="detailsPageDef"
+                Package="com.blogspot.lucbors.book.ch11.contact">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    
+        <methodIterator Binds="findContacts.result" DataControl="DeviceFeatures" RangeSize="25"
+                    BeanClass="oracle.adf.model.datacontrols.device.Contact" id="findContactsIterator"/>
+
+    <accessorIterator MasterBinding="findContactsIterator" Binds="addresses" RangeSize="25"
+                      DataControl="DeviceFeatures" BeanClass="oracle.adf.model.datacontrols.device.ContactAddresses"
+                      id="addressesIterator"/>
+
+
+  </executables>
+  <bindings>
+  
+  
+ <attributeValues IterBinding="findContactsIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="findContactsIterator" id="displayName">
+      <AttrNames>
+        <Item Value="displayName"/>
+      </AttrNames>
+    </attributeValues>
+
+
+      <action IterBinding="findContactsIterator" id="setCurrentRowWithKeyValue"
+            InstanceName="DeviceFeatures.dataProvider" DataControl="DeviceFeatures" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.currentCon}" NDType="java.lang.String"/>
+    </action>
+    <tree IterBinding="addressesIterator" id="addresses">
+      <nodeDefinition DefName="oracle.adf.model.datacontrols.device.ContactAddresses" Name="addresses0">
+        <AttrNames>
+          <Item Value="type"/>
+          <Item Value="streetAddress"/>
+          <Item Value="locality"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+
+  </bindings>
+</pageDefinition>

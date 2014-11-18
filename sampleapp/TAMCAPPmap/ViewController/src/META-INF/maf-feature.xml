@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="com.tamcapp.mobilebook.map.Map" name="map" icon="images/Map-and-Location.png"
+                 image="images/Map-and-Location.png" securityEnabled="true">
+    <adfmf:content id="map.1">
+      <adfmf:amx file="map/maps.xml#maps"/>
+    </adfmf:content>
+    <adfmf:deviceFeatureAccess>
+      <adfmf:deviceLocation access="true" id="dl1"/>
+      <adfmf:deviceNetwork access="true" id="dn1"/>
+    </adfmf:deviceFeatureAccess>
+  </adfmf:feature>
+</adfmf:features>

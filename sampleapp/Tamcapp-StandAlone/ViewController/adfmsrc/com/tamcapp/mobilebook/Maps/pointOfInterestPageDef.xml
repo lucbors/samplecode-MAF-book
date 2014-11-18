@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="pointOfInterestPageDef"
+                Package="com.tamcapp.mobilebook.Maps">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="PointsOfInterest" id="PointsOfInterestIterator"/>
+    <accessorIterator MasterBinding="PointsOfInterestIterator" Binds="pois" RangeSize="-1"
+                      DataControl="PointsOfInterest" BeanClass="com.tamcapp.mobilebook.mobile.pojos.PointOfInterest"
+                      id="poisIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="poisIterator" id="pois">
+      <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.PointOfInterest" Name="pois0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="name"/>
+          <Item Value="lat"/>
+          <Item Value="lng"/>
+          <Item Value="link"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

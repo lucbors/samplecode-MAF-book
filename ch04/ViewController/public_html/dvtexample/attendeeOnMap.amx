@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Map" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+       <amx:commandButton text="back" action="__back" id="cb2"/>
+    </amx:facet>
+    <amx:facet name="secondary"/>
+    <dvtm:geographicMap id="map1">
+      <dvtm:pointDataLayer value="#{bindings.attendees.collectionModel}" id="pdl1" var="row">
+        <dvtm:pointLocation  address="#{row.streetAddress}" id="ptl1" type="address">
+          <dvtm:marker id="mrk1"/>
+        </dvtm:pointLocation>
+      </dvtm:pointDataLayer>
+    </dvtm:geographicMap>
+  </amx:panelPage>
+</amx:view>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="browseSessionsPageDef"
+                Package="com.tamcapp.mobilebook.Sessions">
+    <parameters/>
+    <executables>
+        <variableIterator id="variables"/>
+        <iterator Binds="root" RangeSize="25" DataControl="Sessions" id="SessionsIterator"/>
+        <accessorIterator MasterBinding="SessionsIterator" Binds="sessions" RangeSize="25" DataControl="Sessions"
+                          BeanClass="com.tamcapp.mobilebook.mobile.pojos.Session" id="sessionsIterator"/>
+    </executables>
+    <bindings>
+        <tree IterBinding="sessionsIterator" id="sessions">
+            <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.Session" Name="sessions0">
+                <AttrNames>
+                    <Item Value="id"/>
+                    <Item Value="title"/>
+                    <Item Value="presenterName"/>
+                    <Item Value="topic"/>
+                </AttrNames>
+                <Accessors>
+                    <Item Value="slot"/>
+                </Accessors>
+            </nodeDefinition>
+            <nodeDefinition DefName="com.tamcapp.mobilebook.mobile.pojos.Slot" Name="sessions1">
+                <AttrNames>
+                    <Item Value="sessionDate"/>
+                    <Item Value="displayDate"/>
+                    <Item Value="displayDateNoTime"/>
+                    <Item Value="startTime"/>
+                    <Item Value="endTime"/>
+                </AttrNames>
+            </nodeDefinition>
+        </tree>
+    </bindings>
+</pageDefinition>

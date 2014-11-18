@@ -1,0 +1,351 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="TamcappWsDC" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+              xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/Tamcapp/TamcappAmService?wsdl"
+                             service="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmService">
+                  <model name="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmService"
+                         xmlns="http://oracle.com/ws/model">
+                     <service name="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmService">
+                        <port name="TamcappAmServiceSoapHttpPort"
+                              binding="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmServiceSoapHttp">
+                           <soap addressUrl="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/Tamcapp/TamcappAmService"
+                                 xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="createGcmSubscribers">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createGcmSubscribers"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="mergeAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergeAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="updatePresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updatePresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="updateAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updateAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="mergeAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergeAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="mergePresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergePresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getPresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getPresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="deleteAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deleteAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="updateAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updateAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="searchAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/searchAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="createAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="deleteAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deleteAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getGcmSubscribers">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getGcmSubscribers"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="deletePresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deletePresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findPresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findPresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="createPresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createPresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="searchSessions">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/searchSessions"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="createAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="TamcappWsSesDc" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+              xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/Tamcapp/TamcappAmService?wsdl"
+                             service="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmService">
+                  <model name="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmService"
+                         xmlns="http://oracle.com/ws/model">
+                     <service name="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmService">
+                        <port name="TamcappAmServiceSoapHttpPort"
+                              binding="{/com/blogspot/lucbors/tamcapp/model/srv/common/}TamcappAmServiceSoapHttp">
+                           <soap addressUrl="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/Tamcapp/TamcappAmService"
+                                 xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="createGcmSubscribers">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createGcmSubscribers"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="mergeAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergeAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="updatePresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updatePresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="updateAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updateAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="mergeAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergeAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="mergePresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/mergePresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getPresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getPresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="deleteAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deleteAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="updateAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/updateAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="searchAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/searchAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="createAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findSessionsById">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findSessionsById"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="deleteAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deleteAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getGcmSubscribers">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getGcmSubscribers"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="deletePresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/deletePresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findAttendences">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findAttendences"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findPresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/findPresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="createPresentations">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createPresentations"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="getAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/getAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="searchSessions">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/searchSessions"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="createAttendees">
+                              <soap soapAction="/com/blogspot/lucbors/tamcapp/model/srv/common/createAttendees"
+                                    xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="Authenticate" className="oracle.adf.model.connection.adfmf.LoginConnection"
+              adfCredentialStoreKey="Authenticate" partial="false" manageInOracleEnterpriseManager="true"
+              deployable="true" xmlns="">
+      <Factory className="oracle.adf.model.connection.adfmf.LoginConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="adfmfLogin">
+            <Contents>
+               <login url="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/TamcappEnterprise/faces/pushMessages.jsf"/>
+               <logout url="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/TamcappEnterprise/faces/pushMessages.jsf"/>
+               <authenticationMode value="hybrid"/>
+               <idleTimeout value="300"/>
+               <sessionTimeout value="28800"/>
+               <maxFailuresBeforeCredentialCleared value="3"/>
+               <injectCookiesToRestHttpHeader value="true"/>
+               <includeBasicAuthHeader value="true"/>
+               <rememberCredentials>
+                  <enableRememberUserName value="true"/>
+                  <rememberUserNameDefault value="true"/>
+                  <enableRememberPassword value="false"/>
+                  <enableStayLoggedIn value="true"/>
+                  <stayLoggedInDefault value="true"/>
+               </rememberCredentials>
+               <accessControl url="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/TamcappEnterprise/jersey/userroles"/>
+               <userObjectFilter>
+                  <role name="Attendee"/>
+                  <role name="Organizer"/>
+                  <role name="Speaker"/>
+               </userObjectFilter>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

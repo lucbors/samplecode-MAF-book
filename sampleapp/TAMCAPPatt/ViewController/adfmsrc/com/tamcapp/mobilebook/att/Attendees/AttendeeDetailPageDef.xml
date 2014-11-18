@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="AttendeeDetailPageDef"
+                Package="com.tamcapp.mobilebook.att.Attendees">
+ <parameters/>
+  <executables>
+  
+  
+    <invokeAction id="autoQuery" Binds="searchAttendeesDetail"/>
+    <iterator Binds="root" RangeSize="25" DataControl="AttendeesDetail" id="AttendeesDetailIterator"/>
+    <accessorIterator MasterBinding="AttendeesDetailIterator" Binds="attendeesDetail" RangeSize="25"
+                      DataControl="AttendeesDetail" BeanClass="com.tamcapp.mobilebook.att.mobile.pojos.PersonDetail"
+                      id="attendeesDetailIterator"/>
+    <variableIterator id="variables">
+      <variable Type="java.lang.Long" Name="searchAttendeesDetail_currentAttendee" IsQueriable="false"/>
+      <variable Type="java.lang.Object" Name="uploadImage_imageSource" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  
+  
+  <bindings>
+    <attributeValues IterBinding="attendeesDetailIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesDetailIterator" id="firstName">
+      <AttrNames>
+        <Item Value="firstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesDetailIterator" id="lastName">
+      <AttrNames>
+        <Item Value="lastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesDetailIterator" id="countryName">
+      <AttrNames>
+        <Item Value="countryName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesDetailIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesDetailIterator" id="picture">
+      <AttrNames>
+        <Item Value="picture"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="attendeesDetailIterator" id="organization">
+      <AttrNames>
+        <Item Value="organization"/>
+      </AttrNames>
+    </attributeValues>
+ 
+    <attributeValues IterBinding="attendeesDetailIterator" id="phone">
+      <AttrNames>
+        <Item Value="phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attendeesDetailIterator" id="bio">
+      <AttrNames>
+        <Item Value="bio"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="searchAttendeesDetail" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="searchAttendeesDetail" IsViewObjectMethod="false" DataControl="AttendeesDetail"
+                  InstanceName="data.AttendeesDetail.dataProvider">
+      <NamedData NDName="currentAttendee" NDType="java.lang.Long"
+                 NDValue="#{pageFlowScope.attendeesBean.currentAttendee}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="currentAttendee">
+      <AttrNames>
+        <Item Value="searchAttendeesDetail_currentAttendee"/>
+      </AttrNames>
+    </attributeValues>
+     <methodAction id="uploadImage" RequiresUpdateModel="true" Action="invokeMethod" MethodName="uploadImage"
+                  IsViewObjectMethod="false" DataControl="AttendeesDetail"
+                  InstanceName="data.AttendeesDetail.dataProvider">
+      <NamedData NDName="imageSource" NDType="java.lang.Object" NDValue="${bindings.uploadImage_imageSource}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="imageSource">
+      <AttrNames>
+        <Item Value="uploadImage_imageSource"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="saveAttendee" RequiresUpdateModel="true" Action="invokeMethod" MethodName="saveAttendee"
+                  IsViewObjectMethod="false" DataControl="AttendeesDetail"
+                  InstanceName="data.AttendeesDetail.dataProvider"/>
+  </bindings>
+</pageDefinition>

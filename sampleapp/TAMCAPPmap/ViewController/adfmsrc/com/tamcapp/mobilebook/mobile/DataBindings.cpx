@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.tamcapp.mobilebook.mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/map/map.amx" usageId="com_tamcapp_mobilebook_mobile_mapPageDef"/>
+    <page path="/map/myMap.amx" usageId="com_tamcapp_mobilebook_mobile_myMapPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_tamcapp_mobilebook_mobile_mapPageDef" path="map.mapPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_myMapPageDef" path="map.myMapPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="GooglePlacesClient" path="com.tamcapp.mobilebook.mobile.GooglePlacesClient"/>
+  </dataControlUsages>
+</Application>

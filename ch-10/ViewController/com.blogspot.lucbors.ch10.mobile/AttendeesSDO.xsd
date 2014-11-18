@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:sdoJava="commonj.sdo/java" sdoJava:package="com.blogspot.lucbors.tamcapp.model.vo.common" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:sdoXML="commonj.sdo/xml" xmlns="/com/blogspot/lucbors/tamcapp/model/vo/common/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="BC4JService.xsd"/>
+  <xsd:import namespace="commonj.sdo/java" schemaLocation="sdoJava.xsd"/>
+  <xsd:import namespace="commonj.sdo/xml" schemaLocation="sdoXML.xsd"/>
+  <xsd:include schemaLocation="AttendencesSDO.xsd"/>
+  <xsd:include schemaLocation="PresentationsSDO.xsd"/>
+  <xsd:complexType name="AttendeesSDO">
+    <xsd:annotation>
+      <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+        <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+          <attribute>Id</attribute>
+        </key>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+      <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Organization" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="CountryId" nillable="true" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="Bio" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="IsPresenter" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Email" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Phone" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Picture" nillable="true" type="ns0:base64Binary-DataHandler"/>
+      <xsd:element minOccurs="0" name="CountryName" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Id1" type="xsd:long" sdoXML:dataType="sdoJava:LongObject"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Attendences" type="AttendencesSDO"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Presentations" type="PresentationsSDO"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="attendeesSDO" type="AttendeesSDO"/>
+</xsd:schema>

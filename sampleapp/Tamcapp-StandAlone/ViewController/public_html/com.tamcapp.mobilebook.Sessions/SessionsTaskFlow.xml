@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+    <task-flow-definition id="SessionsTaskFlow">
+        <default-activity>SessionStartPage</default-activity>
+        <managed-bean id="__2a">
+            <managed-bean-name>sessionBean</managed-bean-name>
+            <managed-bean-class>com.tamcapp.mobilebook.mobile.beans.SessionBean</managed-bean-class>
+            <managed-bean-scope>pageFlow</managed-bean-scope>
+        </managed-bean>
+        <managed-bean id="__2b">
+    <managed-bean-name>showDocumentBean</managed-bean-name>
+    <managed-bean-class>com.tamcapp.mobilebook.mobile.beans.ShowDocumentBean</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+  </managed-bean>
+       <view id="SessionStartPage">
+            <page>/com.tamcapp.mobilebook.Sessions/SessionStartPage.amx</page>
+        </view>
+        <view id="browseSessions">
+            <page>/com.tamcapp.mobilebook.Sessions/browseSessions.amx</page>
+        </view>
+        <view id="sessionDetails">
+            <page>/com.tamcapp.mobilebook.Sessions/sessionDetails.amx</page>
+        </view>
+        <view id="speakerSessionEval">
+            <page>/com.tamcapp.mobilebook.Sessions/speakerSessionEval.amx</page>
+        </view>
+        <control-flow-rule id="__1">
+            <from-activity-id>SessionStartPage</from-activity-id>
+            <control-flow-case id="__2">
+                <from-outcome>browse</from-outcome>
+                <to-activity-id>browseSessions</to-activity-id>
+                <transition>flipRight</transition>
+            </control-flow-case>
+            <control-flow-case id="__5">
+                <from-outcome>evaluations</from-outcome>
+                <to-activity-id>speakerSessionEval</to-activity-id>
+                <transition>fade</transition>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__3">
+            <from-activity-id>browseSessions</from-activity-id>
+            <control-flow-case id="__4">
+                <from-outcome>details</from-outcome>
+                <to-activity-id>sessionDetails</to-activity-id>
+                <transition>flipRight</transition>
+            </control-flow-case>
+        </control-flow-rule>
+    </task-flow-definition>
+</adfc-mobile-config>

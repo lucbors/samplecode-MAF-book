@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Email +" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" action="__back"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"/>
+    </amx:facet>
+    <amx:tableLayout id="tl1">
+      <amx:rowLayout id="rla">
+        <amx:cellFormat id="cf1a">
+          <amx:outputText value="When you push the button...." id="ot2"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+      
+      <amx:rowLayout id="rlb">
+        <amx:cellFormat id="cf1b">
+          <amx:outputText value="a picture is taken...." id="ot3"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+      
+      <amx:rowLayout id="rlc">
+        <amx:cellFormat id="cfc">
+          <amx:outputText value="attached to an email...." id="ot4"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+      
+      <amx:rowLayout id="rld">
+        <amx:cellFormat id="cfd">
+          <amx:outputText value="and sent to luc (including GPS Coordinates)" id="ot5"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+      <amx:rowLayout id="rl1">
+        <amx:cellFormat id="cf1">
+          <amx:commandButton text="Take Picture" id="cb3"
+                             actionListener="#{pageFlowScope.interactionBean.executeLogic}"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+    </amx:tableLayout>
+  </amx:panelPage>
+</amx:view>

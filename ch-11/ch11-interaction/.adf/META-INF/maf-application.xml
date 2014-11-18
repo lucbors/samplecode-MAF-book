@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="ch11interaction" id="com.company.ch11interaction"
+                   appControllerFolder="ApplicationController">
+  <adfmf:deviceFeatureAccess>
+    <adfmf:deviceContacts access="true" id="dc1"/>
+    <adfmf:deviceFiles access="true" id="df1"/>
+    <adfmf:deviceSMS access="true" id="dsms1"/>
+  </adfmf:deviceFeatureAccess>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch11.sms"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch11.contact"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch11.email"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch11.photo"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch11.file"/>
+  <adfmf:featureReference id="com.blogspot.lucbors.book.ch11.gps"/>
+</adfmf:application>

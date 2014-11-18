@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.tamcapp.mobilebook.ses.mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/com.tamcapp.mobilebook.ses.ConferenceSessions/SessionStartPage.amx"
+          usageId="com_tamcapp_mobilebook_ses_mobile_SessionStartPagePageDef"/>
+    <page path="/com.tamcapp.mobilebook.ses.ConferenceSessions/BrowseSessions.amx"
+          usageId="com_tamcapp_mobilebook_ses_mobile_BrowseSessionsPageDef"/>
+    <page path="/com.tamcapp.mobilebook.ses.ConferenceSessions/SessionDetails.amx"
+          usageId="com_tamcapp_mobilebook_ses_mobile_SessionDetailsPageDef"/>
+    <page path="/com.tamcapp.mobilebook.ses.ConferenceSessions/SpeakerSessionEval.amx"
+          usageId="com_tamcapp_mobilebook_ses_mobile_SpeakerSessionEvalPageDef"/>
+    <page path="/com.tamcapp.mobilebook.ses.ConferenceSessions/tablet/SessionTablet.amx"
+          usageId="com_tamcapp_mobilebook_ses_mobile_SessionTabletPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_tamcapp_mobilebook_ses_mobile_SessionStartPagePageDef"
+          path="com.tamcapp.mobilebook.ses.ConferenceSessions.SessionStartPagePageDef"/>
+    <page id="com_tamcapp_mobilebook_ses_mobile_BrowseSessionsPageDef"
+          path="com.tamcapp.mobilebook.ses.ConferenceSessions.BrowseSessionsPageDef"/>
+    <page id="com_tamcapp_mobilebook_ses_mobile_SessionDetailsPageDef"
+          path="com.tamcapp.mobilebook.ses.ConferenceSessions.SessionDetailsPageDef"/>
+    <page id="com_tamcapp_mobilebook_ses_mobile_SpeakerSessionEvalPageDef"
+          path="com.tamcapp.mobilebook.ses.ConferenceSessions.SpeakerSessionEvalPageDef"/>
+    <page id="com_tamcapp_mobilebook_ses_mobile_SessionTabletPageDef"
+          path="com.tamcapp.mobilebook.ses.ConferenceSessions.tablet.SessionTabletPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ConferenceSessions" path="com.tamcapp.mobilebook.ses.mobile.ConferenceSessions"/>
+    <!--dc id="ScheduledSessions" path="com.tamcapp.mobilebook.ses.mobile.ScheduledSessions"/-->
+    <dc id="Evaluations" path="com.tamcapp.mobilebook.ses.mobile.Evaluations"/>
+    <dc id="TamcappWsSesDc" path="com.tamcapp.mobilebook.ses.mobile.TamcappWsSesDc"/>
+ 
+  </dataControlUsages>
+</Application>

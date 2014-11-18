@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+
+    <managed-bean id="__4">
+      <managed-bean-name>callerBean</managed-bean-name>
+      <managed-bean-class>com.blogspot.lucbors.book.ch7.mobile.CallerBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+
+</adfc-mobile-config>

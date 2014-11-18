@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="Authenticate" className="oracle.adf.model.connection.adfmf.LoginConnection"
+              adfCredentialStoreKey="Authenticate" partial="false" manageInOracleEnterpriseManager="true"
+              deployable="true" xmlns="">
+      <Factory className="oracle.adf.model.connection.adfmf.LoginConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="adfmfLogin">
+            <Contents>
+               <login url="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/TamcappEnterprise/faces/pushMessages.jsf"/>
+               <logout url="http://ec2-54-228-192-85.eu-west-1.compute.amazonaws.com:8001/TamcappEnterprise/faces/pushMessages.jsf"/>
+               <accessControl url=""/>
+               <idleTimeout value="300"/>
+               <sessionTimeout value="28800"/>
+               <cookieNames>
+                  <cookie name="JSESSIONID"/>
+               </cookieNames>
+               <userObjectFilter/>
+               <authenticationMode value="hybrid"/>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="GooglePlacesUrlConn" className="oracle.adf.model.connection.url.HttpURLConnection" xmlns="">
+      <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="GooglePlacesUrlConn">
+            <Contents>
+               <urlconnection name="GooglePlacesUrlConn"
+                              url="https://maps.googleapis.com/maps/api/place/nearbysearch/json"/>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="example-task-flow">
+    <default-activity>first</default-activity>
+    <view id="first">
+      <page>/example/first.amx</page>
+    </view>
+    <view id="second">
+      <page>/example/second.amx</page>
+    </view>
+    <view id="third">
+      <page>/example/third.amx</page>
+    </view>
+    <view id="fourth"></view>
+    <control-flow-rule id="__1">
+      <from-activity-id>first</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goToSecond</from-outcome>
+        <to-activity-id>second</to-activity-id>
+        <transition>fade</transition>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>goToThird</from-outcome>
+        <to-activity-id>third</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    
+  
+    <control-flow-rule id="__4">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>goToFourth</from-outcome>
+        <to-activity-id>fourth</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule></task-flow-definition>
+</adfc-mobile-config>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Headcount" styleClass="tamcapp-small-text" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" action="__back" text="Back"/>
+        </amx:facet>
+        <amx:selectOneChoice label="" id="soc1" styleClass="tamcapp-selectOneChoice">
+            <amx:selectItem label="Deep Dive into Oracle MAF" id="si1"/>
+            <amx:selectItem label="Oracle MAF Explained" id="si2"/>
+        </amx:selectOneChoice>
+        <amx:panelGroupLayout halign="center" valign="middle">
+            <amx:commandButton text="+1" id="cb2" inlineStyle="height:200px; width:200px; border-color:Blue;"/>
+        </amx:panelGroupLayout>
+    </amx:panelPage>
+</amx:view>

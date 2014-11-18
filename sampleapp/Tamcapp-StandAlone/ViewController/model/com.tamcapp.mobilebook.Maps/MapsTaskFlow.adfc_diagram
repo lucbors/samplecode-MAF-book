@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">ViewMaps</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.Maps/ViewMaps.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ViewMaps&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">186.66797</property>
+      <property
+         name="x">166.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">floorPlan</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.Maps/floorPlan.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>floorPlan&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">189.73438</property>
+      <property
+         name="x">476.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">floorplan</property>
+      <property
+         name="sdm:polyPoints">R50,207.0,186.60156,435.0,189.66797,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View5">
+      <property
+         name="activityId">pointOfInterest</property>
+      <property
+         name="page">/com.tamcapp.mobilebook.Maps/pointOfInterest.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>pointOfInterest&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">319.60156</property>
+      <property
+         name="x">475.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="View5">
+      <property
+         name="fromOutcome">info</property>
+      <property
+         name="sdm:polyPoints">R54,207.0,190.10156,434.0,319.53516,L50</property>
+   </ControlFlowCase>
+</SDM>

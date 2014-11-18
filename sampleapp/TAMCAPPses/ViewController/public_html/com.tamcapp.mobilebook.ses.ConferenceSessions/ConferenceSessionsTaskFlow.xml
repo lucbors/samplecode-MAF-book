@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+    <task-flow-definition id="ConferenceSessionsTaskFlow">
+        <default-activity>router1</default-activity>
+        <managed-bean id="__2a">
+            <managed-bean-name>conferenceSessionBean</managed-bean-name>
+            <managed-bean-class>com.tamcapp.mobilebook.ses.mobile.beans.ConferenceSessionBean</managed-bean-class>
+            <managed-bean-scope>pageFlow</managed-bean-scope>
+            <managed-property id="__18">
+                <property-name>currentConferenceSession</property-name>
+                <property-class>java.lang.String</property-class>
+                <value>-1</value>
+            </managed-property>
+        </managed-bean>
+        <managed-bean id="__2b">
+            <managed-bean-name>showDocumentBean</managed-bean-name>
+            <managed-bean-class>com.tamcapp.mobilebook.ses.mobile.beans.ShowDocumentBean</managed-bean-class>
+            <managed-bean-scope>application</managed-bean-scope>
+        </managed-bean>
+        <view id="SessionStartPage">
+            <page>/com.tamcapp.mobilebook.ses.ConferenceSessions/SessionStartPage.amx</page>
+        </view>
+        <view id="BrowseSessions">
+            <page>/com.tamcapp.mobilebook.ses.ConferenceSessions/BrowseSessions.amx</page>
+        </view>
+        <view id="SessionDetails">
+            <page>/com.tamcapp.mobilebook.ses.ConferenceSessions/SessionDetails.amx</page>
+        </view>
+        <view id="SpeakerSessionEval">
+            <page>/com.tamcapp.mobilebook.ses.ConferenceSessions/SpeakerSessionEval.amx</page>
+        </view>
+        <router id="router1">
+            <case id="__9">
+                <expression>#{applicationScope.notified}</expression>
+                <outcome>notified</outcome>
+            </case>
+            <case id="__10">
+                <expression>#{!applicationScope.notified}</expression>
+                <outcome>notNotified</outcome>
+            </case>
+            <default-outcome>notNotified</default-outcome>
+        </router>
+        <method-call id="handleNotification">
+            <method>#{pageFlowScope.conferenceSessionBean.handleNotification}</method>
+            <parameter>
+                <class>java.lang.String</class>
+                <value>44</value>
+            </parameter>
+            <outcome>
+                <fixed-outcome>continue</fixed-outcome>
+            </outcome>
+        </method-call>
+        <control-flow-rule id="__1">
+            <from-activity-id>SessionStartPage</from-activity-id>
+            <control-flow-case id="__2">
+                <from-outcome>browse</from-outcome>
+                <to-activity-id>BrowseSessions</to-activity-id>
+                <transition>flipRight</transition>
+            </control-flow-case>
+            <control-flow-case id="__5">
+                <from-outcome>evaluations</from-outcome>
+                <to-activity-id>SpeakerSessionEval</to-activity-id>
+                <transition>fade</transition>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__3">
+            <from-activity-id>BrowseSessions</from-activity-id>
+            <control-flow-case id="__4">
+                <from-outcome>details</from-outcome>
+                <to-activity-id>SessionDetails</to-activity-id>
+                <transition>flipRight</transition>
+            </control-flow-case>
+            <control-flow-case id="__15">
+                <from-outcome>start</from-outcome>
+                <to-activity-id>SessionStartPage</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__6">
+            <from-activity-id>router1</from-activity-id>
+            <control-flow-case id="__7">
+                <from-outcome>notNotified</from-outcome>
+                <to-activity-id>SessionStartPage</to-activity-id>
+            </control-flow-case>
+            <control-flow-case id="__8">
+                <from-outcome>notified</from-outcome>
+                <to-activity-id>handleNotification</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__11">
+            <from-activity-id>handleNotification</from-activity-id>
+            <control-flow-case id="__12">
+                <from-outcome>continue</from-outcome>
+                <to-activity-id>SessionDetails</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__13">
+            <from-activity-id>SessionDetails</from-activity-id>
+            <control-flow-case id="__14">
+                <from-outcome>browse</from-outcome>
+                <to-activity-id>BrowseSessions</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__16">
+            <from-activity-id>*</from-activity-id>
+            <control-flow-case id="__17">
+                <from-outcome>featureActivated</from-outcome>
+                <to-activity-id>router1</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+    </task-flow-definition>
+</adfc-mobile-config>

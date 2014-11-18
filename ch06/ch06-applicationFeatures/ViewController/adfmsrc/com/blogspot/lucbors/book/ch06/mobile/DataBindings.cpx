@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.blogspot.lucbors.book.ch06.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/com.blogspot.lucbors.book.ch06.customSpringboard/customSpringboard.amx"
+          usageId="com_blogspot_lucbors_book_ch06_mobile_customSpringboardPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_blogspot_lucbors_book_ch06_mobile_customSpringboardPageDef"
+          path="com.blogspot.lucbors.book.ch06.customSpringboard.customSpringboardPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ApplicationFeatures" path="com.blogspot.lucbors.book.ch06.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

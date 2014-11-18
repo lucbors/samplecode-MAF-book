@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf-skins xmlns="http://xmlns.oracle.com/adf/mf/skin">
+
+   <!--skin id="s1">
+        <id>mobileAlta.iOS</id>
+        <family>mobileAlta</family>
+        <extends>mobileAlta</extends>
+    </skin-->
+    
+<skin-addition id="s2">
+        <skin-id>mobileAlta</skin-id>
+        <style-sheet-name>css/tamcapp.css</style-sheet-name>
+    </skin-addition>
+</adfmf-skins>

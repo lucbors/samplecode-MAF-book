@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1" styleClass="tampcapp-background">
+        <amx:facet name="header">
+            <amx:outputText value="#{bindings.title.inputValue}" styleClass="tamcapp-small-text" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" text="Overview" action="__back"/>
+        </amx:facet>
+        <amx:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+            <amx:tableLayout id="tl1" cellSpacing="2">
+               
+                <amx:rowLayout id="rl2">
+                    <amx:cellFormat id="cf6"/>
+                    <amx:cellFormat id="cf2">
+                    <amx:outputText value="#{bindings.room.inputValue} : " styleClass="tamcapp-smaller-text" id="ot7"/>  
+                        <amx:outputText value="#{bindings.displayStartTime.inputValue} - " id="ot10"
+                                        styleClass="tamcapp-smaller-text">
+                          
+                        </amx:outputText>
+                        
+                        <amx:outputText value="#{bindings.displayEndTime.inputValue}" id="ot10a"
+                                        styleClass="tamcapp-smaller-text">
+                         
+                        </amx:outputText>
+                        
+                    </amx:cellFormat>
+                </amx:rowLayout>
+             <amx:rowLayout id="rl4">
+                    <amx:cellFormat id="cf8"/>
+                    <amx:cellFormat id="cf4">
+                        <amx:outputText value="#{bindings.presenterName.inputValue}" styleClass="tamcapp-smaller-text"
+                                        id="ot4"/>
+                    </amx:cellFormat>
+                </amx:rowLayout>
+                <amx:rowLayout id="rl5">
+                    <amx:cellFormat id="cf9"/>
+                    <amx:cellFormat id="cf10">
+                        <amx:outputText value="Topic : #{bindings.topic.inputValue}" id="ot6"
+                                        styleClass="tamcapp-smaller-text"/>
+                    </amx:cellFormat>
+                </amx:rowLayout>
+            </amx:tableLayout>
+         
+        </amx:panelGroupLayout>
+        
+        <amx:panelGroupLayout layout="vertical" halign="center">
+          <amx:commandButton text="Display Paper" id="cb3"
+                               actionListener="#{showDocumentBean.remotePreview}"/>
+                <amx:inputText value="#{bindings.sessionAbstract.inputValue}" styleClass="tamcapp-smaller-text"
+      rows="4"    simple="true"                id="ot11"/>
+      
+      
+            <amx:outputText value="Rate Session" id="ot2"/>
+            <dvtm:ratingGauge id="ratingGauge1" inputIncrement="half" emptyText="Evaluation Pending" maxValue="5"
+                          minValue="0" inlineStyle="height:50%;"/>
+                     </amx:panelGroupLayout>   
+    </amx:panelPage>
+</amx:view>

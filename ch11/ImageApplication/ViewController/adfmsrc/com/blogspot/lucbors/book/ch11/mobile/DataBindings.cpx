@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.62.94" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.blogspot.lucbors.book.ch11.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/com.blogspot.lucbors.book.ch11.Images/Images.amx"
+          usageId="com_blogspot_lucbors_book_ch11_mobile_ImagesPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_blogspot_lucbors_book_ch11_mobile_ImagesPageDef"
+          path="com.blogspot.lucbors.book.ch11.Images.ImagesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="UploadImageDC" path="com.blogspot.lucbors.book.ch11.mobile.UploadImageDC"/>
+    <dc id="ImageDC" path="com.blogspot.lucbors.book.ch11.mobile.ImageDC"/>
+    <dc id="ImageBean" path="com.blogspot.lucbors.book.ch11.mobile.ImageBean"/>
+    <dc id="DeviceFeatures" path="com.blogspot.lucbors.book.ch11.application.DeviceFeatures"/>
+    <dc id="UploadImage" path="com.blogspot.lucbors.book.ch11.mobile.UploadImage"/>
+    </dataControlUsages>
+</Application>

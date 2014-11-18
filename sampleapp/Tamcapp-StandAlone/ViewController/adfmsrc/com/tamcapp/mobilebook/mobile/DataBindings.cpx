@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.tamcapp.mobilebook.mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/com.tamcapp.mobilebook.Springboard/Springboard.amx"
+          usageId="com_tamcapp_mobile_mobile_SpringboardPageDef"/>
+    <page path="/com.tamcapp.mobilebook.Maps/floorPlan.amx" usageId="com_tamcapp_mobilebook_mobile_floorPlanPageDef"/>
+    <page path="/com.tamcapp.mobilebook.Attendees/EditAttendee.amx"
+          usageId="com_tamcapp_mobilebook_mobile_EditAttendeePageDef"/>
+    <page path="/com.tamcapp.mobilebook.Sessions/browseSessions.amx"
+          usageId="com_tamcapp_mobilebook_mobile_browseSessionsPageDef"/>
+    <page path="/com.tamcapp.mobilebook.Sessions/sessionDetails.amx"
+          usageId="com_tamcapp_mobilebook_mobile_sessionDetailsPageDef"/>
+    <page path="/com.tamcapp.mobilebook.Sessions/speakerSessionEval.amx"
+          usageId="com_tamcapp_mobilebook_mobile_speakerSessionEvalPageDef"/>
+    <page path="/com.tamcapp.mobilebook.Schedule/ScheduleStartPage.amx"
+          usageId="com_tamcapp_mobilebook_mobile_ScheduleStartPagePageDef"/>
+    <page path="/com.tamcapp.mobilebook.Maps/pointOfInterest.amx"
+          usageId="com_tamcapp_mobilebook_mobile_pointOfInterestPageDef"/>
+    <page path="/com.tamcapp.mobilebook.Organization/ReportIssues.amx"
+          usageId="com_tamcapp_mobilebook_mobile_ReportIssuesPageDef"/>
+    <page path="/com.tamcapp.mobilebook.Attendees/AttendeeStart.amx"
+          usageId="com_tamcapp_mobilebook_mobile_AttendeeStartPageDef"/>
+    <page path="/Dashboard/Dashboard.amx" usageId="com_tamcapp_mobilebook_mobile_DashboardPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_tamcapp_mobile_mobile_SpringboardPageDef"
+          path="com.tamcapp.mobilebook.Springboard.SpringboardPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_floorPlanPageDef" path="com.tamcapp.mobilebook.Maps.floorPlanPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_EditAttendeePageDef"
+          path="com.tamcapp.mobilebook.Attendees.EditAttendeePageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_browseSessionsPageDef"
+          path="com.tamcapp.mobilebook.Sessions.browseSessionsPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_sessionDetailsPageDef"
+          path="com.tamcapp.mobilebook.Sessions.sessionDetailsPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_speakerSessionEvalPageDef"
+          path="com.tamcapp.mobilebook.Sessions.speakerSessionEvalPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_ScheduleStartPagePageDef"
+          path="com.tamcapp.mobilebook.Schedule.ScheduleStartPagePageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_pointOfInterestPageDef"
+          path="com.tamcapp.mobilebook.Maps.pointOfInterestPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_ReportIssuesPageDef"
+          path="com.tamcapp.mobilebook.Organization.ReportIssuesPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_AttendeeStartPageDef"
+          path="com.tamcapp.mobilebook.Attendees.AttendeeStartPageDef"/>
+    <page id="com_tamcapp_mobilebook_mobile_DashboardPageDef" path="Dashboard.DashboardPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DeviceFeatures" path="com.tamcapp.mobilebook.application.DeviceFeatures"/>
+    <dc id="PointsOfInterest" path="com.tamcapp.mobilebook.mobile.PointsOfInterest"/>
+    <dc id="ScheduledSessions" path="com.tamcapp.mobilebook.mobile.ScheduledSessions"/>
+    <dc id="Evaluations" path="com.tamcapp.mobilebook.mobile.Evaluations"/>
+    <dc id="Sessions" path="com.tamcapp.mobilebook.mobile.Sessions"/>
+    <dc id="Attendees" path="com.tamcapp.mobilebook.mobile.Attendees"/>
+    <dc id="FloorPlanHotspots" path="com.tamcapp.mobilebook.mobile.FloorPlanHotspots"/>
+    <dc id="ApplicationFeatures" path="com.tamcapp.mobilebook.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="com.tamcapp.mobilebook.reg.Registration" name="Registration" securityEnabled="false"
+                 listener-class="com.tamcapp.mobilebook.reg.mobile.listener.RegistrationFeatureLifeCycleListener"
+                 icon="images/Engineering.png" image="images/Engineering.png">
+    <adfmf:constraints/>
+    <adfmf:content id="com.tamcapp.mobilebook.reg.Registration.1">
+      <adfmf:constraints/>
+      <adfmf:amx file="com.tamcapp.mobilebook.reg.Registration/RegistrationTF.xml#RegistrationTF"/>
+    </adfmf:content>
+    <adfmf:deviceFeatureAccess>
+      <adfmf:deviceNetwork access="true" id="dn1"/>
+    </adfmf:deviceFeatureAccess>
+    <adfmf:preferences/>
+  </adfmf:feature>
+</adfmf:features>
